@@ -41,16 +41,30 @@ int main(int argc, char **argv){
 	sleep(5);
 	rp_AcqGetWritePointer(&posnow);
 int j;
+int i;
+int n;
 for(j = 0; j < 3; j++){
 	posold=posnow;
-	rp_AcqGetWritePointer(&posnow);                
-        rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
-        int i;
-        	for(i = 0; i < buff_size; i++){
+	rp_AcqGetWritePointer(&posnow); 
+	if((posnow-posold)>0){
+		n = posnow-posold;               
+       // rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
+        	for(i = 0; i < n; i++){
+                	printf("%f\n", buff[i+posold]);
+			fprintf(f, "%f\n", buff[i+posold]);
+        	}
+	}
+	else{
+		for(i=posold;i<16384;i++){
                 	printf("%f\n", buff[i]);
 			fprintf(f, "%f\n", buff[i]);
         	}
-	printf("%d\n",buff_size);
+		for(i=0;i<posnow;i++){
+                	printf("%f\n", buff[i]);
+			fprintf(f, "%f\n", buff[i]);
+        	}
+	}	
+	//printf("%d\n",n);
 	printf("%d\n",posold);
 	printf("%d\n",posnow);
 	}
