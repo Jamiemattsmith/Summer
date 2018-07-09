@@ -12,6 +12,13 @@ int main(int argc, char **argv){
         if(rp_Init() != RP_OK){
                 fprintf(stderr, "Rp api init failed!\n");
         }
+	
+	FILE *f = fopen("data.txt", "w");
+	if (f == NULL)
+	{
+    		printf("Error opening file!\n");
+    		exit(1);
+	}
 
         /*LOOB BACK FROM OUTPUT 2 - ONLY FOR TESTING*/
         rp_GenReset();
@@ -50,10 +57,11 @@ int main(int argc, char **argv){
         int i;
         for(i = 0; i < buff_size; i++){
                 printf("%f\n", buff[i]);
+		fprintf(f, "%f\n", buff[i]);
         }
         /* Releasing resources */
         free(buff);
         rp_Release();
-        ///return 0;
+        return 0;
 }
         
