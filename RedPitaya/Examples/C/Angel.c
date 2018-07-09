@@ -40,13 +40,13 @@ int main(int argc, char **argv){
         rp_AcqSetTriggerSrc(RP_TRIG_SRC_DISABLED);
 	rp_AcqGetWritePointer(&posnow);
 int j;
-for(j = 0; j < 100; j++){
+for(j = 0; j < 3; j++){
 	posold=posnow;
 	rp_AcqGetWritePointer(&posnow);                
         rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
         int i;
         	for(i = 0; i < buff_size; i++){
-                	//printf("%f\n", buff[i]);
+                	printf("%f\n", buff[i]);
 			fprintf(f, "%f\n", buff[i]);
         	}
 	printf("%d\n",rp_AcqGetWritePointer(&posnow));
