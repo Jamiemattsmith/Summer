@@ -45,7 +45,7 @@ for(j = 0; j < 100; j++){
 	rp_AcqGetWritePointer(&posnow);                
         rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
         int i;
-        	for(i = 0; i < buff_size; i++){
+        	for(i = 0; i < posnow-posold; i++){
                 	//printf("%f\n", buff[i]);
 			fprintf(f, "%f\n", buff[i]);
         	}
