@@ -29,15 +29,15 @@ int main(int argc, char **argv){
         rp_AcqSetDecimation(8192);
         rp_AcqSetTriggerLevel(RP_CH_1, 0);
         rp_AcqSetTriggerDelay(0);
+        rp_AcqSetTriggerSrc(RP_TRIG_SRC_DISABLED);
 
-        rp_AcqStart();
 
         /* After acquisition is started some time delay is needed in order to acquire fresh samples in to buffer*/
         /* Here we have used time delay of one second but you can calculate exact value taking in to account buffer*/
         /*length and smaling rate*/
 
-        //sleep(1);
-        rp_AcqSetTriggerSrc(RP_TRIG_SRC_DISABLED);
+
+        rp_AcqStart();
 	rp_AcqGetWritePointer(&posnow);
 int j;
 for(j = 0; j < 3; j++){
@@ -46,9 +46,10 @@ for(j = 0; j < 3; j++){
         rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
         int i;
         	for(i = 0; i < buff_size; i++){
-                	printf("%f\n", buff[i+posold]);
-			fprintf(f, "%f\n", buff[i+posold]);
+                	printf("%f\n", buff[i]);
+			fprintf(f, "%f\n", buff[i]);
         	}
+	printf("%d\n",buff_size);
 	printf("%d\n",posold);
 	printf("%d\n",posnow);
 	}
