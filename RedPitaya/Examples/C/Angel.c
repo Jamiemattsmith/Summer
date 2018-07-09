@@ -46,10 +46,10 @@ for(j = 0; j < 3; j++){
         rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
         int i;
         	for(i = 0; i < buff_size; i++){
-                	printf("%f\n", buff[i]);
-			fprintf(f, "%f\n", buff[i]);
+                	printf("%f\n", buff[i+posold]);
+			fprintf(f, "%f\n", buff[i+posold]);
         	}
-	printf("%d\n",rp_AcqGetWritePointer(&posnow));
+	printf("%d\n",posold);
 	printf("%d\n",posnow);
 	}
         /* Releasing resources */
