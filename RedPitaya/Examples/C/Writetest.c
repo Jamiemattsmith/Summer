@@ -15,7 +15,7 @@ if (f == NULL)
 }
 
 /* print some text */
-const char *text = "Write this to the file";
+const char *text = "Hello Nicholas, how's the hand?";
 fprintf(f, "Some text: %s\n", text);
 
 /* print integers and floats */
