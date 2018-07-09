@@ -53,8 +53,8 @@ for(j = 0; j < 2; j++){
                 	printf("%f\n", buff[i]);
 			fprintf(f, "%f\n", buff[i]);
         	}
-	printf(rp_AcqGetWritePointer(&posnow));
-	printf(posnow);
+	printf("%d\n",rp_AcqGetWritePointer(&posnow));
+	printf("%d\n",posnow);
 	}
         /* Releasing resources */
         free(buff);
