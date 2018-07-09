@@ -20,20 +20,13 @@ int main(int argc, char **argv){
     		exit(1);
 	}
 
-        /*LOOB BACK FROM OUTPUT 2 - ONLY FOR TESTING*/
-        rp_GenReset();
-        rp_GenFreq(RP_CH_1, 20000.0);
-        rp_GenAmp(RP_CH_1, 1.0);
-        rp_GenWaveform(RP_CH_1, RP_WAVEFORM_SINE);
-        rp_GenOutEnable(RP_CH_1);
-
 
         uint32_t buff_size = 16384;
         float *buff = (float *)malloc(buff_size * sizeof(float));
 
         rp_AcqReset();
         rp_AcqSetDecimation(1);
-        rp_AcqSetTriggerLevel(RP_CH_1, 0.1);
+        rp_AcqSetTriggerLevel(RP_CH_1, 0);
         rp_AcqSetTriggerDelay(0);
 
         rp_AcqStart();
@@ -43,7 +36,7 @@ int main(int argc, char **argv){
         /*length and smaling rate*/
 
         sleep(1);
-        rp_AcqSetTriggerSrc(RP_TRIG_SRC_CHA_PE);
+        rp_AcqSetTriggerSrc("DISABLED");
         rp_acq_trig_state_t state = RP_TRIG_STATE_TRIGGERED;
 
         while(1){
