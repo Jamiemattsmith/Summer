@@ -20,7 +20,7 @@ int main(int argc, char **argv){
     		exit(1);
 	}
 
-
+	uint32_t posnow = 0;
         uint32_t buff_size = 16384;
         float *buff = (float *)malloc(buff_size * sizeof(float));
 
@@ -53,6 +53,8 @@ for(j = 0; j < 2; j++){
                 	printf("%f\n", buff[i]);
 			fprintf(f, "%f\n", buff[i]);
         	}
+	printf(rp_AcqGetNormalizedDataPos(&posnow));
+	printf(posnow);
 	}
         /* Releasing resources */
         free(buff);
