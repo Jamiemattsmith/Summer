@@ -40,7 +40,7 @@ int main(int argc, char **argv){
         rp_AcqSetTriggerSrc(RP_TRIG_SRC_DISABLED);
 	rp_AcqGetWritePointer(&posnow);
 int j;
-for(j = 0; j < 10; j++){
+for(j = 0; j < 100; j++){
 	posold=posnow;
 	rp_AcqGetWritePointer(&posnow);                
         rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
