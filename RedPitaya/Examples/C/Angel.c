@@ -28,7 +28,7 @@ int main(int argc, char **argv){
         rp_AcqReset();
         rp_AcqSetDecimation(8192);
         rp_AcqSetTriggerLevel(RP_CH_1, 0);
-        rp_AcqSetTriggerDelay(0);
+        rp_AcqSetTriggerDelay(8192);
         rp_AcqSetTriggerSrc(RP_TRIG_SRC_DISABLED);
 
 
@@ -38,7 +38,7 @@ int main(int argc, char **argv){
 
 
         rp_AcqStart();
-	sleep(2);
+	sleep(5);
 	rp_AcqGetWritePointer(&posnow);
 int j;
 for(j = 0; j < 3; j++){
