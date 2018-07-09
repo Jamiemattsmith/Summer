@@ -53,7 +53,7 @@ for(j = 0; j < 2; j++){
                 	printf("%f\n", buff[i]);
 			fprintf(f, "%f\n", buff[i]);
         	}
-	printf(rp_AcqGetNormalizedDataPos(&posnow));
+	printf(rp_AcqGetWritePointer(&posnow));
 	printf(posnow);
 	}
         /* Releasing resources */
