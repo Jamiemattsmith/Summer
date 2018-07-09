@@ -36,7 +36,7 @@ int main(int argc, char **argv){
         /* Here we have used time delay of one second but you can calculate exact value taking in to account buffer*/
         /*length and smaling rate*/
 
-        sleep(1);
+        //sleep(1);
         rp_AcqSetTriggerSrc(RP_TRIG_SRC_DISABLED);
 	rp_AcqGetWritePointer(&posnow);
 int j;
