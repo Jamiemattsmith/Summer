@@ -45,13 +45,15 @@ int main(int argc, char **argv){
                 break;
                 }
         }*/
-                
+int j;
+for(j = 0; j < 2; j++){                
         rp_AcqGetOldestDataV(RP_CH_1, &buff_size, buff);
         int i;
-        for(i = 0; i < buff_size; i++){
-                printf("%f\n", buff[i]);
-		fprintf(f, "%f\n", buff[i]);
-        }
+        	for(i = 0; i < buff_size; i++){
+                	printf("%f\n", buff[i]);
+			fprintf(f, "%f\n", buff[i]);
+        	}
+	}
         /* Releasing resources */
         free(buff);
         rp_Release();
