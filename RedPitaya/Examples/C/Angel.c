@@ -54,7 +54,7 @@ int j;
 int i;
 int n;
 for(j = 0; j < 2; j++){
-	//buff_size=16384;
+	buff_size=16384;
 	posold=posnow;
 	rp_AcqGetWritePointer(&posnow);
 	printf("%d\n",posold);
@@ -66,12 +66,12 @@ for(j = 0; j < 2; j++){
 	else{
 		n=16384+posnow-posold;
 	}               
-       rp_AcqGetDataPosV(RP_CH_1,0,16383, buff, &buff_size);
+       rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
         	for(i = 0; i < buff_size; i++){
                 	printf("%f\n", buff[i]);
 			fprintf(f, "%f\n", buff[i]);
         	}
-		printf("n = %d\n", n);
+		printf("n = %d\n", buff_size);
 
 	}
 	rp_AcqGetSamplingRateHz(&freq);
