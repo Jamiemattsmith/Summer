@@ -52,6 +52,7 @@ int j;
 int i;
 int n;
 for(j = 0; j < 2; j++){
+	buff_size=16384;
 	posold=posnow;
 	rp_AcqGetWritePointer(&posnow);
 	printf("%d\n",posold);
