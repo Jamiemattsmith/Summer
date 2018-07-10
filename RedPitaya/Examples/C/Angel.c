@@ -28,7 +28,7 @@ int main(int argc, char **argv){
         rp_AcqReset();
         rp_AcqSetDecimation(8192);
         rp_AcqSetTriggerLevel(RP_CH_1, 0);
-        rp_AcqSetTriggerDelay(8192);
+        rp_AcqSetTriggerDelay(0);
 
 
 
