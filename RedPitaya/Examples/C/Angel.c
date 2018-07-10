@@ -99,6 +99,7 @@ for(j = 0; j < 1; j++){
                 	printf("%f\n", buff2[i]);
 			fprintf(f, "%f\n", buff2[i]);
         	}
+	printf("n = %d\n", n);
 	}
         /* Releasing resources */
         free(buff);
