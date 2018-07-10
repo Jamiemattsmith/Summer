@@ -27,7 +27,7 @@ int main(int argc, char **argv){
         float *buff = (float *)malloc(buff_size * sizeof(float));
 	float *buff2 = (float *)malloc(buff_size * sizeof(float));
         rp_AcqReset();
-        rp_AcqSetDecimation(8);
+        rp_AcqSetDecimation(8192);
         rp_AcqSetTriggerLevel(RP_CH_1, 0);
         rp_AcqSetTriggerDelay(0);
 
@@ -39,7 +39,7 @@ int main(int argc, char **argv){
 
 
         rp_AcqStart();
-	sleep(8);
+	sleep(1);
         rp_AcqSetTriggerSrc(RP_TRIG_SRC_DISABLED);
         //rp_acq_trig_state_t state = RP_TRIG_STATE_TRIGGERED;
 
@@ -60,7 +60,7 @@ for(j = 0; j < 1; j++){
 	printf("%d\n",posnow); 
 	if((posnow-posold)>0){
 		n = posnow-posold;
-		printf("if error");
+
 	}
 	else{
 		n=16384+posnow-posold;
@@ -71,36 +71,7 @@ for(j = 0; j < 1; j++){
 			fprintf(f, "%f\n", buff[i]);
         	}
 		printf("n = %d\n", n);
-	//}
-	/*else{
-		for(i=posold;i<16384;i++){
-                	printf("%f\n", buff[i]);
-			fprintf(f, "%f\n", buff[i]);
-        	}
-		for(i=0;i<posnow;i++){
-                	printf("%f\n", buff[i]);
-			fprintf(f, "%f\n", buff[i]);
-        	}
-	}*/	
-	//printf("%d\n",n);
-	printf("%d\n",posold);
-	printf("%d\n",posnow);
-	posold=posnow;
-	rp_AcqGetWritePointer(&posnow);
-	printf("%d\n",posold);
-	printf("%d\n",posnow); 
-	if((posnow-posold)>0){
-		n = posnow-posold;
-	}
-	else{
-		n=16384+posnow-posold;
-	}
-	rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff2, &buff2_size);
-        	for(i = 0; i < buff2_size; i++){
-                	printf("%f\n", buff2[i]);
-			fprintf(f, "%f\n", buff2[i]);
-        	}
-	printf("n = %d\n", n);
+
 	}
         /* Releasing resources */
         free(buff);
