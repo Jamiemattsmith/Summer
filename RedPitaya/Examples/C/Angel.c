@@ -39,15 +39,15 @@ int main(int argc, char **argv){
 
         rp_AcqStart();
 	sleep(1);
-        rp_AcqSetTriggerSrc(RP_TRIG_SRC_NOW);
+        rp_AcqSetTriggerSrc(RP_TRIG_SRC_DISABLED);
         rp_acq_trig_state_t state = RP_TRIG_STATE_TRIGGERED;
 
-        while(1){
+        /*while(1){
                 rp_AcqGetTriggerState(&state);
                 if(state == RP_TRIG_STATE_TRIGGERED){
                 break;
                 }
-        }
+        }*/
 	rp_AcqGetWritePointer(&posnow);
 int j;
 int i;
