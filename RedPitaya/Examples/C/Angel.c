@@ -59,19 +59,19 @@ for(j = 0; j < 2; j++){
 	rp_AcqGetWritePointer(&posnow);
 	printf("%d\n",posold);
 	printf("%d\n",posnow); 
-	if((posnow-posold)>0){
+	/*if((posnow-posold)>0){
 		n = posnow-posold;
 
 	}
 	else{
 		n=16384+posnow-posold;
-	}               
+	} */              
        rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
         	for(i = 0; i < buff_size; i++){
                 	printf("%f\n", buff[i]);
 			fprintf(f, "%f\n", buff[i]);
         	}
-		printf("n = %d\n", buff_size);
+		printf("size = %d\n", buff_size);
 
 	}
 	rp_AcqGetSamplingRateHz(&freq);
