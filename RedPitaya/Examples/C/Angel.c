@@ -53,7 +53,7 @@ int main(int argc, char **argv){
 int j;
 int i;
 int n;
-for(j = 0; j < 3; j++){
+for(j = 0; j < 1; j++){
 	posold=posnow;
 	rp_AcqGetWritePointer(&posnow); 
 	if((posnow-posold)>0){
