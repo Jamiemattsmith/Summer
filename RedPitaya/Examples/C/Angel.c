@@ -23,8 +23,9 @@ int main(int argc, char **argv){
 	uint32_t posnow = 0;
 	uint32_t posold = 0;
         uint32_t buff_size = 16384;
+`	uint32_t buff2_size = 16384;
         float *buff = (float *)malloc(buff_size * sizeof(float));
-
+	float *buff2 = (float *)malloc(buff_size * sizeof(float));
         rp_AcqReset();
         rp_AcqSetDecimation(8);
         rp_AcqSetTriggerLevel(RP_CH_1, 0);
@@ -38,7 +39,7 @@ int main(int argc, char **argv){
 
 
         rp_AcqStart();
-	//sleep(8);
+	sleep(8);
         rp_AcqSetTriggerSrc(RP_TRIG_SRC_DISABLED);
         //rp_acq_trig_state_t state = RP_TRIG_STATE_TRIGGERED;
 
@@ -83,6 +84,21 @@ for(j = 0; j < 1; j++){
 	//printf("%d\n",n);
 	printf("%d\n",posold);
 	printf("%d\n",posnow);
+	posold=posnow;
+	rp_AcqGetWritePointer(&posnow);
+	printf("%d\n",posold);
+	printf("%d\n",posnow); 
+	if((posnow-posold)>0){
+		n = posnow-posold;
+	}
+	else{
+		n=16384+posnow-posold;
+	}
+	rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff2, &buff2_size);
+        	for(i = 0; i < n; i++){
+                	printf("%f\n", buff2[i]);
+			fprintf(f, "%f\n", buff2[i]);
+        	}
 	}
         /* Releasing resources */
         free(buff);
