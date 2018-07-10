@@ -57,14 +57,17 @@ for(j = 0; j < 3; j++){
 	posold=posnow;
 	rp_AcqGetWritePointer(&posnow); 
 	if((posnow-posold)>0){
-		n = posnow-posold;               
-       // rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
-        	for(i = 0; i < n; i++){
-                	printf("%f\n", buff[i+posold]);
-			fprintf(f, "%f\n", buff[i+posold]);
-        	}
+		n = posnow-posold;
 	}
 	else{
+		n=16384+posnow-posold               
+       rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
+        	for(i = 0; i < n; i++){
+                	printf("%f\n", buff[i]);
+			fprintf(f, "%f\n", buff[i]);
+        	}
+	//}
+	/*else{
 		for(i=posold;i<16384;i++){
                 	printf("%f\n", buff[i]);
 			fprintf(f, "%f\n", buff[i]);
@@ -73,7 +76,7 @@ for(j = 0; j < 3; j++){
                 	printf("%f\n", buff[i]);
 			fprintf(f, "%f\n", buff[i]);
         	}
-	}	
+	}*/	
 	//printf("%d\n",n);
 	printf("%d\n",posold);
 	printf("%d\n",posnow);
