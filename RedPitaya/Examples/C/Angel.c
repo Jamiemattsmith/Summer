@@ -52,7 +52,7 @@ int main(int argc, char **argv){
 	rp_AcqGetWritePointer(&posnow);
 int j;
 int i;
-int n;
+//int n;
 for(j = 0; j < 2; j++){
 	buff_size=16384;
 	posold=posnow;
