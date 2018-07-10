@@ -38,7 +38,7 @@ int main(int argc, char **argv){
 
 
         rp_AcqStart();
-	sleep(1);
+	//sleep(8);
         rp_AcqSetTriggerSrc(RP_TRIG_SRC_DISABLED);
         //rp_acq_trig_state_t state = RP_TRIG_STATE_TRIGGERED;
 
@@ -52,7 +52,7 @@ int main(int argc, char **argv){
 int j;
 int i;
 int n;
-for(j = 0; j < 2; j++){
+for(j = 0; j < 1; j++){
 	posold=posnow;
 	rp_AcqGetWritePointer(&posnow);
 	printf("%d\n",posold);
