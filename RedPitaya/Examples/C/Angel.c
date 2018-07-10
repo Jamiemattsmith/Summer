@@ -60,6 +60,7 @@ for(j = 0; j < 1; j++){
 	printf("%d\n",posnow); 
 	if((posnow-posold)>0){
 		n = posnow-posold;
+		printf("if error");
 	}
 	else{
 		n=16384+posnow-posold;
