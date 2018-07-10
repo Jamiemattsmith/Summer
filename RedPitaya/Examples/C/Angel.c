@@ -53,7 +53,7 @@ int main(int argc, char **argv){
 int j;
 int i;
 //int n;
-for(j = 0; j < 2; j++){
+for(j = 0; j < 3; j++){
 	buff_size=16384;
 	posold=posnow;
 	rp_AcqGetWritePointer(&posnow);
