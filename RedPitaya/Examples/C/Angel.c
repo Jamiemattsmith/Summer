@@ -66,7 +66,7 @@ for(j = 0; j < 1; j++){
 		n=16384+posnow-posold;
 	}               
        rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
-        	for(i = 0; i < n; i++){
+        	for(i = 0; i < buff_size; i++){
                 	printf("%f\n", buff[i]);
 			fprintf(f, "%f\n", buff[i]);
         	}
@@ -96,7 +96,7 @@ for(j = 0; j < 1; j++){
 		n=16384+posnow-posold;
 	}
 	rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff2, &buff2_size);
-        	for(i = 0; i < n; i++){
+        	for(i = 0; i < buff2_size; i++){
                 	printf("%f\n", buff2[i]);
 			fprintf(f, "%f\n", buff2[i]);
         	}
@@ -104,6 +104,7 @@ for(j = 0; j < 1; j++){
 	}
         /* Releasing resources */
         free(buff);
+	free(buff2);
         rp_Release();
         return 0;
 }
