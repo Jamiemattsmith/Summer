@@ -23,7 +23,7 @@ int main(int argc, char **argv){
 	uint32_t posnow = 0;
 	uint32_t posold = 0;
         uint32_t buff_size = 16384;
-`	uint32_t buff2_size = 16384;
+	uint32_t buff2_size = 16384;
         float *buff = (float *)malloc(buff_size * sizeof(float));
 	float *buff2 = (float *)malloc(buff_size * sizeof(float));
         rp_AcqReset();
