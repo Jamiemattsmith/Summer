@@ -54,7 +54,9 @@ int i;
 int n;
 for(j = 0; j < 2; j++){
 	posold=posnow;
-	rp_AcqGetWritePointer(&posnow); 
+	rp_AcqGetWritePointer(&posnow);
+	printf("%d\n",posold);
+	printf("%d\n",posnow); 
 	if((posnow-posold)>0){
 		n = posnow-posold;
 	}
