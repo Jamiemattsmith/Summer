@@ -23,9 +23,7 @@ int main(int argc, char **argv){
 	uint32_t posnow = 0;
 	uint32_t posold = 0;
         uint32_t buff_size = 16384;
-	uint32_t buff2_size = 16384;
         float *buff = (float *)malloc(buff_size * sizeof(float));
-	float *buff2 = (float *)malloc(buff_size * sizeof(float));
         rp_AcqReset();
         rp_AcqSetDecimation(8192);
         rp_AcqSetTriggerLevel(RP_CH_1, 0);
@@ -75,7 +73,6 @@ for(j = 0; j < 1; j++){
 	}
         /* Releasing resources */
         free(buff);
-	free(buff2);
         rp_Release();
         return 0;
 }
