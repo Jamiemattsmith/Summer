@@ -24,6 +24,7 @@ int main(int argc, char **argv){
 	uint32_t posold = 0;
         uint32_t buff_size = 16384;
         float *buff = (float *)malloc(buff_size * sizeof(float));
+	float freq=0;
         rp_AcqReset();
         rp_AcqSetDecimation(8192);
         rp_AcqSetTriggerLevel(RP_CH_1, 0);
@@ -72,6 +73,8 @@ for(j = 0; j < 2; j++){
 		printf("n = %d\n", n);
 
 	}
+	rp_AcqGetSamplingRateHz(&freq);
+	printf("Smp Freq = %f\n",freq);
         /* Releasing resources */
         free(buff);
         rp_Release();
