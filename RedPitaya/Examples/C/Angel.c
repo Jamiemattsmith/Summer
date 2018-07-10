@@ -48,7 +48,6 @@ int main(int argc, char **argv){
                 break;
                 }
         }
-	sleep(5);
 	rp_AcqGetWritePointer(&posnow);
 int j;
 int i;
@@ -62,11 +61,12 @@ for(j = 0; j < 1; j++){
 	else{
 		n=16384+posnow-posold;
 	}               
-       //rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
+       rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
         	for(i = 0; i < n; i++){
                 	printf("%f\n", buff[i]);
 			fprintf(f, "%f\n", buff[i]);
         	}
+		printf("n = %d\n", n);
 	//}
 	/*else{
 		for(i=posold;i<16384;i++){
