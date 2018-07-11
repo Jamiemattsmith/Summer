@@ -48,12 +48,12 @@ int i;
 
 for(j = 0; j < 20; j++){
 	buff_size=16384;
-	posold=posnow;
+	posold=posnow+1;
 	rp_AcqGetWritePointer(&posnow);
 	//printf("%d\n",posold);
 	//printf("%d\n",posnow); 
              
-       rp_AcqGetDataPosV(RP_CH_1,posold,posnow-1, buff, &buff_size);
+       rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
         	for(i = 0; i < buff_size; i++){
                 	//printf("%f\n", buff[i]);
 			fprintf(f, "%f\n", buff[i]);
