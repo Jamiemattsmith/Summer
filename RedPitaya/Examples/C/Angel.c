@@ -58,7 +58,7 @@ for(j = 0; j < 20; j++){
                 	//printf("%f\n", buff[i]);
 			fprintf(f, "%f\n", buff[i]);
         	}
-		fprintf(f,"size = %d\n", buff_size);
+		//fprintf(f,"size = %d\n", buff_size);
 
 	}
 	rp_AcqGetSamplingRateHz(&freq);
