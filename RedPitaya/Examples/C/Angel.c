@@ -27,7 +27,7 @@ int main(int argc, char **argv){
 	float freq=0;
         rp_AcqReset();
 	rp_AcqSetArmKeep(true);
-        rp_AcqSetDecimation(RP_DEC_8192);
+        rp_AcqSetDecimation(RP_DEC_1024);
         rp_AcqSetTriggerLevel(RP_CH_1, 0);
         rp_AcqSetTriggerDelay(0);
 
@@ -56,7 +56,7 @@ for(j = 0; j < 50; j++){
        rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
         	for(i = 0; i < buff_size; i++){
                 	printf("%f\n", buff[i]);
-			fprintf(f, "%f\n", buff[i]);
+			//fprintf(f, "%f\n", buff[i]);
         	}
 		printf("size = %d\n", buff_size);
 
