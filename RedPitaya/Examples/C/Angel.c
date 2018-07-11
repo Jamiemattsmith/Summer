@@ -46,7 +46,7 @@ int main(int argc, char **argv){
 int j;
 int i;
 
-for(j = 0; j < 7; j++){
+for(j = 0; j < 20; j++){
 	buff_size=16384;
 	posold=posnow;
 	rp_AcqGetWritePointer(&posnow);
