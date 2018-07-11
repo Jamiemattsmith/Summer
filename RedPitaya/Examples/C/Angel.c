@@ -50,6 +50,7 @@ for(j = 0; j < 4; j++){
 	buff_size=16384;
 	posold=posnow;
 	rp_AcqGetWritePointer(&posnow);
+	if(posold!=posnow){posold++;}
 	//printf("%d\n",posold);
 	//printf("%d\n",posnow); 
              
