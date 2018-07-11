@@ -59,7 +59,7 @@ for(j = 0; j < 30; j++){
                 	//printf("%f\n", buff[i]);
 			fprintf(f, "%f\n", buff[i]);
         	}
-		//fprintf("TOMETOYOU\n";
+		fprintf("TOMETOYOU\n");
 
 	}
 	rp_AcqGetSamplingRateHz(&freq);
