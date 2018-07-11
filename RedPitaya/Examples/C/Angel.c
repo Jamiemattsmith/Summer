@@ -46,9 +46,9 @@ int main(int argc, char **argv){
 int j;
 int i;
 
-for(j = 0; j < 2; j++){
+for(j = 0; j < 4; j++){
 	buff_size=16384;
-	posold=posnow+1;
+	posold=posnow;
 	rp_AcqGetWritePointer(&posnow);
 	//printf("%d\n",posold);
 	//printf("%d\n",posnow); 
@@ -58,7 +58,7 @@ for(j = 0; j < 2; j++){
                 	//printf("%f\n", buff[i]);
 			fprintf(f, "%f\n", buff[i]);
         	}
-		//fprintf(f,"size = %d\n", buff_size);
+		//fprintf("TOMETOYOU\n";
 
 	}
 	rp_AcqGetSamplingRateHz(&freq);
