@@ -92,8 +92,9 @@ int main(int argc, char **argv){
     		exit(1);
 	}
 	
-	node* head = NULL;
-
+	//node* head = NULL;
+	float dat [16384];
+	int cnt = 0;
 	uint32_t posnow = 0;
 	uint32_t posold = 0;
         uint32_t buff_size = 16384;
@@ -101,7 +102,7 @@ int main(int argc, char **argv){
 	float freq=0;
         rp_AcqReset();
 	rp_AcqSetArmKeep(true);
-        rp_AcqSetDecimation(RP_DEC_64);
+        rp_AcqSetDecimation(RP_DEC_1024);
         rp_AcqSetTriggerLevel(RP_CH_1, 0);
         rp_AcqSetTriggerDelay(0);
 
@@ -119,8 +120,8 @@ int main(int argc, char **argv){
 	rp_AcqGetWritePointer(&posnow);
 	int j;
 	int i;
-
-	for(j = 0; j < 30; j++){
+	while(1){
+	//for(j = 0; j < 30; j++){
 		buff_size=16384;
 		posold=posnow;
 		rp_AcqGetWritePointer(&posnow);
@@ -129,14 +130,21 @@ int main(int argc, char **argv){
         	for(i = 1; i < buff_size; i++){
                 	//printf("%f\n", buff[i]);
 			//fprintf(f, "%f\n", buff[i]);
-			head = prepend(head,buff[i]);
+			//head = prepend(head,buff[i]);
+			if(cnt<16384){
+				dat[cnt]=buff[i];
+				cnt++;
+			}
         	}
 		//fprintf(f,"TOMETOYOU\n");
-
+		if(cnt==16384){break;}
 	}
-	head=reverse(head);
-	display(head,f);
-	dispose(head);
+	for(i = 0; i < 16384; i++){
+		fprintf(f,"%f\n",dat[i])
+	}
+	//head=reverse(head);
+	//display(head,f);
+	//dispose(head);
 	rp_AcqGetSamplingRateHz(&freq);
 	printf("Smp Freq = %f\n",freq);
         /* Releasing resources */
