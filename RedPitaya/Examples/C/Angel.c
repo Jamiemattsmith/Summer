@@ -101,7 +101,7 @@ int main(int argc, char **argv){
 	float freq=0;
         rp_AcqReset();
 	rp_AcqSetArmKeep(true);
-        rp_AcqSetDecimation(RP_DEC_1024);
+        rp_AcqSetDecimation(RP_DEC_64);
         rp_AcqSetTriggerLevel(RP_CH_1, 0);
         rp_AcqSetTriggerDelay(0);
 
@@ -120,7 +120,7 @@ int main(int argc, char **argv){
 	int j;
 	int i;
 
-	for(j = 0; j < 1000; j++){
+	for(j = 0; j < 10; j++){
 		buff_size=16384;
 		posold=posnow;
 		rp_AcqGetWritePointer(&posnow);
