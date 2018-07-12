@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include "redpitaya/rp.h"
 
+#define NSMP 300000
 typedef struct node
 {
     float data;
@@ -93,7 +94,7 @@ int main(int argc, char **argv){
 	}
 	
 	//node* head = NULL;
-	float dat [30000];
+	float dat [NSMP];
 	int cnt = 0;
 	uint32_t posnow = 0;
 	uint32_t posold = 0;
@@ -131,15 +132,15 @@ int main(int argc, char **argv){
                 	//printf("%f\n", buff[i]);
 			//fprintf(f, "%f\n", buff[i]);
 			//head = prepend(head,buff[i]);
-			if(cnt<30000){
+			if(cnt<NSMP){
 				dat[cnt]=buff[i];
 				cnt++;
 			}
         	}
 		//fprintf(f,"TOMETOYOU\n");
-		if(cnt==30000){break;}
+		if(cnt==NSMP){break;}
 	}
-	for(i = 0; i < 30000; i++){
+	for(i = 0; i < NSMP; i++){
 		fprintf(f,"%f\n",dat[i]);
 	}
 	//head=reverse(head);
