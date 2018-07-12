@@ -118,7 +118,7 @@ int main(int argc, char **argv){
         rp_AcqSetTriggerSrc(RP_TRIG_SRC_DISABLED);
 
 	rp_AcqGetWritePointer(&posnow);
-	int j;
+	//int j;
 	int i;
 	while(1){
 	//for(j = 0; j < 30; j++){
@@ -140,7 +140,7 @@ int main(int argc, char **argv){
 		if(cnt==16384){break;}
 	}
 	for(i = 0; i < 16384; i++){
-		fprintf(f,"%f\n",dat[i])
+		fprintf(f,"%f\n",dat[i]);
 	}
 	//head=reverse(head);
 	//display(head,f);
