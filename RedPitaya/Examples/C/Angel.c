@@ -6,6 +6,78 @@
 #include <unistd.h>
 #include "redpitaya/rp.h"
 
+typedef struct node
+{
+    float data;
+    struct node* next;
+} node;
+
+
+node* create(float data,node* next)
+{
+    node* new_node = (node*)malloc(sizeof(node));
+    if(new_node == NULL)
+    {
+        printf("Error creating a new node.\n");
+        exit(0);
+    }
+    new_node->data = data;
+    new_node->next = next;
+ 
+    return new_node;
+}
+
+node* prepend(node* head,float data)
+{
+    node* new_node = create(data,head);
+    head = new_node;
+    return head;
+}
+
+node* reverse(node* head)
+{
+    node* prev    = NULL;
+    node* current = head;
+    node* next;
+    while (current != NULL)
+    {
+        next  = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+    head = prev;
+    return head;
+}
+
+void display(node* head)
+{
+    node* cursor = head;
+    while(cursor != NULL)
+    {
+	if(cursor != NULL){
+        	printf("%f\n",cursor->data);
+	}
+        cursor = cursor->next;
+    }
+}
+
+void dispose(node *head)
+{
+    node *cursor, *tmp;
+ 
+    if(head != NULL)
+    {
+        cursor = head->next;
+        head->next = NULL;
+        while(cursor != NULL)
+        {
+            tmp = cursor->next;
+            free(cursor);
+            cursor = tmp;
+        }
+    }
+}
 int main(int argc, char **argv){
 
         /* Print error, if rp_Init() function failed */
@@ -19,6 +91,8 @@ int main(int argc, char **argv){
     		printf("Error opening file!\n");
     		exit(1);
 	}
+	
+	node* head = NULL;
 
 	uint32_t posnow = 0;
 	uint32_t posold = 0;
@@ -27,7 +101,7 @@ int main(int argc, char **argv){
 	float freq=0;
         rp_AcqReset();
 	rp_AcqSetArmKeep(true);
-        rp_AcqSetDecimation(RP_DEC_64);
+        rp_AcqSetDecimation(RP_DEC_1024);
         rp_AcqSetTriggerLevel(RP_CH_1, 0);
         rp_AcqSetTriggerDelay(0);
 
@@ -54,11 +128,15 @@ int main(int argc, char **argv){
         	rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
         	for(i = 1; i < buff_size; i++){
                 	//printf("%f\n", buff[i]);
-			fprintf(f, "%f\n", buff[i]);
+			//fprintf(f, "%f\n", buff[i]);
+			head = prepend(head,buff[i]);
         	}
 		//fprintf(f,"TOMETOYOU\n");
 
 	}
+	head=reverse(head);
+	display(head);
+	dispose(head);
 	rp_AcqGetSamplingRateHz(&freq);
 	printf("Smp Freq = %f\n",freq);
         /* Releasing resources */
