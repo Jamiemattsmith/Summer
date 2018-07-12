@@ -50,13 +50,13 @@ node* reverse(node* head)
     return head;
 }
 
-void display(node* head)
+void display(node* head, FILE *f)
 {
     node* cursor = head;
     while(cursor != NULL)
     {
 	if(cursor != NULL){
-        	printf("%f\n",cursor->data);
+        	fprintf(f,"%f\n",cursor->data);
 	}
         cursor = cursor->next;
     }
@@ -120,7 +120,7 @@ int main(int argc, char **argv){
 	int j;
 	int i;
 
-	for(j = 0; j < 10; j++){
+	for(j = 0; j < 30; j++){
 		buff_size=16384;
 		posold=posnow;
 		rp_AcqGetWritePointer(&posnow);
@@ -135,7 +135,7 @@ int main(int argc, char **argv){
 
 	}
 	head=reverse(head);
-	display(head);
+	display(head,f);
 	dispose(head);
 	rp_AcqGetSamplingRateHz(&freq);
 	printf("Smp Freq = %f\n",freq);
