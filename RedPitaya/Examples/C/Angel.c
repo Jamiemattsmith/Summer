@@ -94,7 +94,7 @@ int main(int argc, char **argv){
 	}
 	
 	//node* head = NULL;
-	float dat [NSMP];
+	float *dat = (float*)malloc(NSMP * sizeof(float));
 	int cnt = 0;
 	uint32_t posnow = 0;
 	uint32_t posold = 0;
@@ -150,6 +150,7 @@ int main(int argc, char **argv){
 	printf("Smp Freq = %f\n",freq);
         /* Releasing resources */
         free(buff);
+	free(dat);
         rp_Release();
         return 0;
 }
