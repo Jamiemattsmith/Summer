@@ -120,7 +120,7 @@ int main(int argc, char **argv){
 	int j;
 	int i;
 
-	for(j = 0; j < 30; j++){
+	for(j = 0; j < 300; j++){
 		buff_size=16384;
 		posold=posnow;
 		rp_AcqGetWritePointer(&posnow);
