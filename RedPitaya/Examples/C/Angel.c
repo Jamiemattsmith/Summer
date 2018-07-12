@@ -93,7 +93,7 @@ int main(int argc, char **argv){
 	}
 	
 	//node* head = NULL;
-	float dat [16384];
+	float dat [30000];
 	int cnt = 0;
 	uint32_t posnow = 0;
 	uint32_t posold = 0;
@@ -102,7 +102,7 @@ int main(int argc, char **argv){
 	float freq=0;
         rp_AcqReset();
 	rp_AcqSetArmKeep(true);
-        rp_AcqSetDecimation(RP_DEC_1024);
+        rp_AcqSetDecimation(RP_DEC_64);
         rp_AcqSetTriggerLevel(RP_CH_1, 0);
         rp_AcqSetTriggerDelay(0);
 
@@ -131,15 +131,15 @@ int main(int argc, char **argv){
                 	//printf("%f\n", buff[i]);
 			//fprintf(f, "%f\n", buff[i]);
 			//head = prepend(head,buff[i]);
-			if(cnt<16384){
+			if(cnt<30000){
 				dat[cnt]=buff[i];
 				cnt++;
 			}
         	}
 		//fprintf(f,"TOMETOYOU\n");
-		if(cnt==16384){break;}
+		if(cnt==30000){break;}
 	}
-	for(i = 0; i < 16384; i++){
+	for(i = 0; i < 30000; i++){
 		fprintf(f,"%f\n",dat[i]);
 	}
 	//head=reverse(head);
