@@ -139,7 +139,7 @@ int main(int argc, char **argv){
 		rp_AcqGetWritePointer(&posnow);
              
         	rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
-        	for(i = 1; i != 1; i++){
+        	for(i = 1; i != buff_size; i++){
                 	//printf("%f\n", buff[i]);
 			//fprintf(f, "%f\n", buff[i]);
 			//head = prepend(head,buff[i]);
