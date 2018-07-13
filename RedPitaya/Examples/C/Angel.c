@@ -144,7 +144,7 @@ int main(int argc, char **argv){
 			//fprintf(f, "%f\n", buff[i]);
 			//head = prepend(head,buff[i]);
 			if(cnt!=NSMP){
-				dat[cnt]=buff[i];
+				dat[cnt]=buff[cnt];
 				cnt++;
 			}
         	}
