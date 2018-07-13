@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include "redpitaya/rp.h"
 
-#define NSMP 7812500
+#define NSMP 9765625
 typedef struct node
 {
     float data;
@@ -108,8 +108,10 @@ int main(int argc, char **argv){
 	if(buff == NULL)
     	{
         	printf("A tad too much data perhaps\n");
+		free(dat);
         	exit(0);
-    	}	float freq=0;
+    	}	
+	float freq=0;
         rp_AcqReset();
 	rp_AcqSetArmKeep(true);
         rp_AcqSetDecimation(RP_DEC_64);
