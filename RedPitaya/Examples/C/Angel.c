@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include "redpitaya/rp.h"
 
-#define NSMP 16384
+#define NSMP 3906250
 typedef struct node
 {
     float data;
@@ -114,7 +114,7 @@ int main(int argc, char **argv){
 	float freq=0;
         rp_AcqReset();
 	rp_AcqSetArmKeep(true);
-        rp_AcqSetDecimation(RP_DEC_8);
+        rp_AcqSetDecimation(RP_DEC_64);
         rp_AcqSetTriggerLevel(RP_CH_1, 0);
         rp_AcqSetTriggerDelay(0);
 	printf("Allocated Memory");
