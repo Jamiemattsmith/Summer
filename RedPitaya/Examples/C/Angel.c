@@ -139,12 +139,12 @@ int main(int argc, char **argv){
 		rp_AcqGetWritePointer(&posnow);
              
         	rp_AcqGetDataPosV(RP_CH_1,posold,posnow, buff, &buff_size);
-        	for(i = buff_size; i != 1; i--){
+        	for(i = 1; i != 1; i++){
                 	//printf("%f\n", buff[i]);
 			//fprintf(f, "%f\n", buff[i]);
 			//head = prepend(head,buff[i]);
 			if(cnt!=NSMP){
-				dat[cnt]=buff[buff_size-i];
+				dat[cnt]=buff[i];
 				cnt++;
 			}
         	}
@@ -152,7 +152,7 @@ int main(int argc, char **argv){
 		if(cnt==NSMP){break;}
 	}
 	printf("Saving Data to SD card");
-	for(i = 0; i < NSMP; i++){
+	for(i = NSMP; i !=1; i--){
 		fprintf(f,"%f\n",dat[i]);
 	}
 	//head=reverse(head);
