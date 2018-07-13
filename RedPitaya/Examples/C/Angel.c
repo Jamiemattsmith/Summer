@@ -143,7 +143,7 @@ int main(int argc, char **argv){
                 	//printf("%f\n", buff[i]);
 			//fprintf(f, "%f\n", buff[i]);
 			//head = prepend(head,buff[i]);
-			if(cnt<NSMP){
+			if(cnt!=NSMP){
 				dat[cnt]=buff[i];
 				cnt++;
 			}
