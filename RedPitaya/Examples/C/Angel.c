@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include "redpitaya/rp.h"
 
-#define NSMP 11718750
+#define NSMP 13671875
 typedef struct node
 {
     float data;
@@ -117,7 +117,7 @@ int main(int argc, char **argv){
         rp_AcqSetDecimation(RP_DEC_64);
         rp_AcqSetTriggerLevel(RP_CH_1, 0);
         rp_AcqSetTriggerDelay(0);
-
+	printf("Allocated Memory");
 
 
         /* After acquisition is started some time delay is needed in order to acquire fresh samples in to buffer*/
@@ -128,7 +128,7 @@ int main(int argc, char **argv){
         rp_AcqStart();
 	sleep(1);
         rp_AcqSetTriggerSrc(RP_TRIG_SRC_DISABLED);
-
+	printf("Started Acquisition");
 	rp_AcqGetWritePointer(&posnow);
 	//int j;
 	int i;
@@ -151,6 +151,7 @@ int main(int argc, char **argv){
 		//fprintf(f,"TOMETOYOU\n");
 		if(cnt==NSMP){break;}
 	}
+	printf("Saving Data to SD card");
 	for(i = 0; i < NSMP; i++){
 		fprintf(f,"%f\n",dat[i]);
 	}
