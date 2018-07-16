@@ -10,7 +10,7 @@
 int main(int argc, char **argv){
 
 	int i;
-	int buff_size = 16384;
+	int buff_size = 16385;
 
 	/* Print error, if rp_Init() function failed */
 	if(rp_Init() != RP_OK){
@@ -31,7 +31,7 @@ int main(int argc, char **argv){
 	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_ARBITRARY);
 
 	rp_GenArbWaveform(RP_CH_1, x, buff_size);
-	rp_GenMode(RP_CH_1, STREAM);
+	rp_GenMode(RP_CH_1, RP_GEN_MODE_STREAM);
 	rp_GenAmp(RP_CH_1, 0.7);
 
 	rp_GenFreq(RP_CH_1, 4000.0);
