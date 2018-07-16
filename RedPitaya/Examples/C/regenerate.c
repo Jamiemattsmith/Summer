@@ -31,8 +31,8 @@ int main(int argc, char **argv){
 	float x2[16384];
 	memcpy(x1,x,16384*sizeof(float));
 	memcpy(x2,&x[16384],16384*sizeof(float));
-	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_CONTINUOUS);
-	rp_GenMode(RP_CH_1, RP_GEN_MODE_STREAM);
+	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_ARBITRARY);
+	rp_GenMode(RP_CH_1, RP_GEN_MODE_CONTINUOUS);
 	rp_GenArbWaveform(RP_CH_1, x1, 16384);
 	rp_GenArbWaveform(RP_CH_1, x2, 16384);
 	rp_GenAmp(RP_CH_1, 0.7);
