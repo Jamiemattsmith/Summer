@@ -44,7 +44,7 @@ int main(int argc, char **argv){
 	while(1){
 	rp_GetReadPointer(&posnow);
 	sleep(2);
-	printf("%d",posnow);
+	printf("Hello");
 	}
 	/* Releasing resources */
 	free(x);
