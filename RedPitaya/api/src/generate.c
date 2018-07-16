@@ -49,7 +49,7 @@ int getChannelPropertiesAddress(volatile ch_properties_t **ch_properties, rp_cha
 
 int generate_getBuffPointer(uint32_t* pos)
 {
-    return cmn_GetValue(&generate->properties_chA->buffReadPointer, pos, WRITE_POINTER_MASK);
+    return cmn_GetValue((&generate->properties_chA)->buffReadPointer, pos, 0x3FFF);
 }
 
 int generate_setOutputDisable(rp_channel_t channel, bool disable) {
