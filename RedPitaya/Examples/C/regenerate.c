@@ -34,7 +34,7 @@ int main(int argc, char **argv){
 	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_ARBITRARY);
 	rp_GenMode(RP_CH_1, RP_GEN_MODE_STREAM);
 	rp_GenArbWaveform(RP_CH_1, x1, 16384);
-	//rp_GenArbWaveform(RP_CH_1, x2, 16384);
+	rp_GenArbWaveform(RP_CH_1, x2, 16384);
 	rp_GenAmp(RP_CH_1, 0.7);
 
 	rp_GenFreq(RP_CH_1, 4000.0);
