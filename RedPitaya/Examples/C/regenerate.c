@@ -10,7 +10,7 @@
 int main(int argc, char **argv){
 
 	int i;
-	int buff_size = 16385;
+	int buff_size = 16384;
 
 	/* Print error, if rp_Init() function failed */
 	if(rp_Init() != RP_OK){
