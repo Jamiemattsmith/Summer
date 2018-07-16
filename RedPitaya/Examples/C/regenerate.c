@@ -27,12 +27,12 @@ int main(int argc, char **argv){
 	for (int i = 0; i < buff_size; ++i){
 		x[i] = sin(t[i]);
 	}
-	float x1[16384];
-	memcpy(x1,x,16384*sizeof(float));
+	//float x1[16384];
+	//memcpy(x1,x,16384*sizeof(float));
 	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_ARBITRARY);
-
-	rp_GenArbWaveform(RP_CH_1, x1, 16384);
 	rp_GenMode(RP_CH_1, RP_GEN_MODE_STREAM);
+	rp_GenArbWaveform(RP_CH_1, x, buff_size);
+
 	rp_GenAmp(RP_CH_1, 0.7);
 
 	rp_GenFreq(RP_CH_1, 4000.0);
