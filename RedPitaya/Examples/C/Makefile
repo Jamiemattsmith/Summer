@@ -1,5 +1,5 @@
 CFLAGS  = -g -std=gnu99 -Wall -Werror
-CFLAGS += -I ../../api/include/redpitaya
+CFLAGS += -I ../../api/include
 LDFLAGS = -L/opt/redpitaya/lib
 LDLIBS = -lm -lpthread -lrp
 
