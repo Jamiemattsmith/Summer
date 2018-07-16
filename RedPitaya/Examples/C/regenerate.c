@@ -10,7 +10,7 @@
 int main(int argc, char **argv){
 
 	int i;
-	int buff_size = 20000;
+	int buff_size = 17000;
 
 	/* Print error, if rp_Init() function failed */
 	if(rp_Init() != RP_OK){
@@ -25,7 +25,7 @@ int main(int argc, char **argv){
 	}
 
 	for (int i = 0; i < buff_size; ++i){
-		x[i] = sin(t[i]) + ((1.0/3.0) * sin(t[i] * 3));
+		x[i] = sin(t[i]);
 	}
 
 	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_ARBITRARY);
