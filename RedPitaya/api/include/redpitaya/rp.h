@@ -1276,6 +1276,8 @@ int rp_GenTrigger(uint32_t channel);
 
 float rp_CmnCnvCntToV(uint32_t field_len, uint32_t cnts, float adc_max_v, uint32_t calibScale, int calib_dc_off, float user_dc_off);
 
+int rp_GetReadPointer(uint32_t* pos);
+
 #ifdef __cplusplus
 }
 #endif

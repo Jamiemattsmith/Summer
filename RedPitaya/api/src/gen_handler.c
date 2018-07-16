@@ -65,6 +65,11 @@ int gen_SetDefaultValues() {
     return RP_OK;
 }
 
+int gen_GetReadPointer(uint32_t* pos)
+{
+    return generate_getBuffPointer(pos);
+}
+
 int gen_Disable(rp_channel_t channel) {
     return generate_setOutputDisable(channel, true);
 }

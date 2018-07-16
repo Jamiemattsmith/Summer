@@ -805,3 +805,8 @@ float rp_CmnCnvCntToV(uint32_t field_len, uint32_t cnts, float adc_max_v, uint32
 	return cmn_CnvCntToV(field_len, cnts, adc_max_v, calibScale, calib_dc_off, user_dc_off);
 }
 
+int rp_GetReadPointer(uint32_t* pos)
+{
+    return gen_GetReadPointer(pos);
+}
+

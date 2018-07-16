@@ -85,7 +85,7 @@ typedef struct generate_control_s {
 int generate_Init();
 int generate_Release();
 
-int getBuffPointer(uint32_t* pos)
+int generate_getBuffPointer(uint32_t* pos);
 
 int generate_setOutputDisable(rp_channel_t channel, bool disable);
 int generate_getOutputEnabled(rp_channel_t channel, bool *disabled);

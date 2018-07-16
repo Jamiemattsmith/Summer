@@ -47,7 +47,7 @@ int getChannelPropertiesAddress(volatile ch_properties_t **ch_properties, rp_cha
     return RP_OK;
 }
 
-int getBuffPointer(uint32_t* pos)
+int generate_getBuffPointer(uint32_t* pos)
 {
     return cmn_GetValue(&generate->properties_chA->buffReadPointer, pos, WRITE_POINTER_MASK);
 }

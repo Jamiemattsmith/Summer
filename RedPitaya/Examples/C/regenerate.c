@@ -11,6 +11,7 @@ int main(int argc, char **argv){
 
 	int i;
 	int buff_size = 32768;
+	uint32_t posnow = 0;
 
 	/* Print error, if rp_Init() function failed */
 	if(rp_Init() != RP_OK){
@@ -40,6 +41,11 @@ int main(int argc, char **argv){
 	rp_GenFreq(RP_CH_1, 4000.0);
 
 	rp_GenOutEnable(RP_CH_1);
+	while(1){
+	rp_GetReadPointer(&posnow);
+	sleep(2);
+	printf("%d",posnow);
+	}
 	/* Releasing resources */
 	free(x);
 	free(t);
