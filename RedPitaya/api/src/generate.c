@@ -49,7 +49,7 @@ int getChannelPropertiesAddress(volatile ch_properties_t **ch_properties, rp_cha
 
 int generate_getBuffPointer(uint32_t* pos)
 {
-    pos=(&generate->properties_chA)->buffReadPointer;
+    *pos=(&generate->properties_chA)->buffReadPointer;
 	return 1;
 }
 
