@@ -1,6 +1,6 @@
 CFLAGS  = -g -std=gnu99 -Wall -Werror
-CFLAGS += -I ../../api/include
-LDFLAGS = -L ../../api/lib
+CFLAGS += -I root/Summer/RedPitaya/api/include
+LDFLAGS = -L root/Summer/RedPitaya/api/lib
 LDLIBS = -lm -lpthread -lrp
 
 SRCS=$(wildcard *.c)

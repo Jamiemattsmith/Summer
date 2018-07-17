@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
-#include "redpitaya/rp3.h"
+#include "redpitaya/rp.h"
 #define M_PI 3.14159265358979323846
 
 int main(int argc, char **argv){
