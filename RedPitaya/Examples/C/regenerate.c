@@ -12,6 +12,7 @@ int main(int argc, char **argv){
 	float half[16384];
 	int buff_size = 16384;
 	uint32_t posnow = 0;
+	uint32_t posold =0;
 	//int *readings=(int *)malloc(2000 * sizeof(int));
 	/* Print error, if rp_Init() function failed */
 	if(rp_Init() != RP_OK){
@@ -37,11 +38,11 @@ int main(int argc, char **argv){
 		half[i]=0.5;
 	}
 	rp_GenOutEnable(RP_CH_1);
-	rp_GetReadPointer(&posnow);
 	//for(i=0;i<20000;i++){
 	while(1){
-	rp_updateData(RP_CH_1, half, posnow-1,1);
+	posold=posnow;
 	rp_GetReadPointer(&posnow);
+	rp_updateData(RP_CH_1, half, posnow-1,posnow-posold);
 	}
 	/*for(i=0;i<2000;i++){
 	printf("%d\n",readings[i]);
