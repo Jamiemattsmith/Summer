@@ -51,7 +51,7 @@ int generate_getBuffPointer(uint32_t* pos)
 {
     volatile ch_properties_t *ch_properties;
 
-    rp_calib_params_t calib = calib_GetParams();
+    //rp_calib_params_t calib = calib_GetParams();
 
     getChannelPropertiesAddress(&ch_properties, RP_CH_1);
     *pos = ch_properties->buffReadPointer;
