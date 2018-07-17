@@ -69,6 +69,10 @@ int gen_GetReadPointer(uint32_t* pos)
 {
     return generate_getBuffPointer(pos);
 }
+int gen_updateData(rp_channel_t channel, float *data, uint32_t start, uint32_t length)
+{
+    return generate_updateData(channel,data,start,length);
+}
 
 int gen_Disable(rp_channel_t channel) {
     return generate_setOutputDisable(channel, true);

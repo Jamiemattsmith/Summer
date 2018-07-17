@@ -4,7 +4,7 @@
 #include <math.h>
 #include <string.h>
 #include "redpitaya/rp3.h"
-
+#include "generate.h"
 #define M_PI 3.14159265358979323846
 
 int main(int argc, char **argv){

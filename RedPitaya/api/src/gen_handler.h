@@ -18,6 +18,7 @@
 
 #include "redpitaya/rp.h"
 int gen_GetReadPointer(uint32_t* pos);
+int gen_updateData(rp_channel_t channel, float *data, uint32_t start, uint32_t length);
 int gen_SetDefaultValues();
 int gen_Disable(rp_channel_t chanel);
 int gen_Enable(rp_channel_t chanel);
