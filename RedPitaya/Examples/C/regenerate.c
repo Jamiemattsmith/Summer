@@ -37,7 +37,7 @@ int main(int argc, char **argv){
 	rp_GenOutEnable(RP_CH_1);
 	for(i=0;i<20;i++){
 	rp_GetReadPointer(&posnow);
-	printf("%d",posnow);
+	printf("%d\n",posnow);
 	}
 	/* Releasing resources */
 	free(x);
