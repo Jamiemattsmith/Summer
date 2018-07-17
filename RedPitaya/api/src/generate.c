@@ -264,7 +264,7 @@ int generate_updateData(rp_channel_t channel, float *data, uint32_t start, uint3
     int dc_offs = 0;//channel == RP_CH_1 ? calib.be_ch1_dc_offs: calib.be_ch2_dc_offs;
     uint32_t amp_max = 0; //channel == RP_CH_1 ? calib.be_ch1_fs: calib.be_ch2_fs;
 
-    for(int i = start; i < length; i++) {
+    for(int i = start; i < start+length; i++) {
         dataOut[i % BUFFER_LENGTH] = cmn_CnvVToCnt(DATA_BIT_LENGTH, data[i-start], AMPLITUDE_MAX, false, amp_max, dc_offs, 0.0);
     }
     return RP_OK;
