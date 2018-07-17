@@ -12,7 +12,7 @@ int main(int argc, char **argv){
 	int i;
 	int buff_size = 16384;
 	uint32_t posnow = 0;
-
+	int readings[20];
 	/* Print error, if rp_Init() function failed */
 	if(rp_Init() != RP_OK){
 		fprintf(stderr, "Rp api init failed!\n");
@@ -37,7 +37,10 @@ int main(int argc, char **argv){
 	rp_GenOutEnable(RP_CH_1);
 	for(i=0;i<20;i++){
 	rp_GetReadPointer(&posnow);
-	printf("%d\n",posnow);
+	readings[i]=posnow;
+	}
+	for(i=0;i<20;i++){
+	printf("%d\n",readings[i]);
 	}
 	/* Releasing resources */
 	free(x);
