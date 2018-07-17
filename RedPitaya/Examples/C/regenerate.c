@@ -32,7 +32,7 @@ int main(int argc, char **argv){
 	rp_GenArbWaveform(RP_CH_1, x, 16384);
 	rp_GenAmp(RP_CH_1, 0.7);
 
-	rp_GenFreq(RP_CH_1, 4000.0);
+	rp_GenFreq(RP_CH_1, 120.0);
 
 	rp_GenOutEnable(RP_CH_1);
 	for(i=0;i<20;i++){
