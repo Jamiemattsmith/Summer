@@ -12,7 +12,7 @@ int main(int argc, char **argv){
 	float half[16384];
 	int buff_size = 16384;
 	uint32_t posnow = 0;
-	int *readings=(int *)malloc(2000 * sizeof(int));
+	//int *readings=(int *)malloc(2000 * sizeof(int));
 	/* Print error, if rp_Init() function failed */
 	if(rp_Init() != RP_OK){
 		fprintf(stderr, "Rp api init failed!\n");
