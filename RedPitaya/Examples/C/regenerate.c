@@ -35,11 +35,9 @@ int main(int argc, char **argv){
 	rp_GenFreq(RP_CH_1, 4000.0);
 
 	rp_GenOutEnable(RP_CH_1);
-	while(1){
-	printf("Hello\n");
+	for(i=0;i<20;i++){
 	rp_GetReadPointer(&posnow);
 	printf("%d",posnow);
-	sleep(2);
 	}
 	/* Releasing resources */
 	free(x);
