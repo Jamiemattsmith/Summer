@@ -37,9 +37,10 @@ int main(int argc, char **argv){
 		half[i]=0.5;
 	}
 	rp_GenOutEnable(RP_CH_1);
-	for(i=0;i<2000;i++){
 	rp_GetReadPointer(&posnow);
-	rp_updateData(RP_CH_1, half, posnow-1,3);
+	for(i=0;i<2000;i++){
+	rp_updateData(RP_CH_1, half, posnow-1,1);
+	rp_GetReadPointer(&posnow);
 	}
 	for(i=0;i<2000;i++){
 	printf("%d\n",readings[i]);
