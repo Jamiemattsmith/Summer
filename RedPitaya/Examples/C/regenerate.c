@@ -39,7 +39,7 @@ int main(int argc, char **argv){
 	rp_GetReadPointer(&posnow);
 	readings[i]=posnow;
 	}
-	for(i=0;i<20;i++){
+	for(i=0;i<2000;i++){
 	printf("%d\n",readings[i]);
 	}
 	/* Releasing resources */
