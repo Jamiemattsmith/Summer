@@ -32,13 +32,14 @@ int main(int argc, char **argv){
 	rp_GenArbWaveform(RP_CH_1, x, 16384);
 	rp_GenAmp(RP_CH_1, 0.7);
 
-	rp_GenFreq(RP_CH_1, 120.0);
+	rp_GenFreq(RP_CH_1, 20.0);
 	for(i=0;i<16384;i++){
 		half[i]=0.5;
 	}
 	rp_GenOutEnable(RP_CH_1);
 	rp_GetReadPointer(&posnow);
-	for(i=0;i<20000;i++){
+	//for(i=0;i<20000;i++){
+	while(1){
 	rp_updateData(RP_CH_1, half, posnow-1,1);
 	rp_GetReadPointer(&posnow);
 	}
