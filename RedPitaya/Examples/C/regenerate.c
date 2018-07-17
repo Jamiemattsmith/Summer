@@ -42,7 +42,7 @@ int main(int argc, char **argv){
 	while(1){
 	posold=posnow;
 	rp_GetReadPointer(&posnow);
-	rp_updateData(RP_CH_1, half, posnow-1,posnow-posold);
+	rp_updateData(RP_CH_1, half, posold,posnow-posold);
 	}
 	/*for(i=0;i<2000;i++){
 	printf("%d\n",readings[i]);
