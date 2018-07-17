@@ -250,3 +250,22 @@ int generate_writeData(rp_channel_t channel, float *data, uint32_t start, uint32
     }
     return RP_OK;
 }
+
+int generate_updateData(rp_channel_t channel, float *data, uint32_t start, uint32_t length) {
+    volatile int32_t *dataOut;
+    CHANNEL_ACTION(channel,
+            dataOut = data_chA,
+            dataOut = data_chB)
+
+    volatile ch_properties_t *properties;
+    getChannelPropertiesAddress(&properties, channel);
+
+    //rp_calib_params_t calib = calib_GetParams();
+    int dc_offs = 0;//channel == RP_CH_1 ? calib.be_ch1_dc_offs: calib.be_ch2_dc_offs;
+    uint32_t amp_max = 0; //channel == RP_CH_1 ? calib.be_ch1_fs: calib.be_ch2_fs;
+
+    for(int i = start; i < length; i++) {
+        dataOut[i % BUFFER_LENGTH] = cmn_CnvVToCnt(DATA_BIT_LENGTH, data[i-start], AMPLITUDE_MAX, false, amp_max, dc_offs, 0.0);
+    }
+    return RP_OK;
+}

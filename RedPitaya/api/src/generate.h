@@ -86,6 +86,7 @@ int generate_Init();
 int generate_Release();
 
 int generate_getBuffPointer(uint32_t* pos);
+int generate_updateData(rp_channel_t channel, float *data, uint32_t start, uint32_t length); 
 
 int generate_setOutputDisable(rp_channel_t channel, bool disable);
 int generate_getOutputEnabled(rp_channel_t channel, bool *disabled);
