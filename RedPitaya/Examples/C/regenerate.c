@@ -38,13 +38,13 @@ int main(int argc, char **argv){
 	}
 	rp_GenOutEnable(RP_CH_1);
 	rp_GetReadPointer(&posnow);
-	for(i=0;i<2000;i++){
+	for(i=0;i<20000;i++){
 	rp_updateData(RP_CH_1, half, posnow-1,1);
 	rp_GetReadPointer(&posnow);
 	}
-	for(i=0;i<2000;i++){
+	/*for(i=0;i<2000;i++){
 	printf("%d\n",readings[i]);
-	}
+	}*/
 	/* Releasing resources */
 	free(x);
 	free(t);
