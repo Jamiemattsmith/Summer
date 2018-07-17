@@ -810,3 +810,8 @@ int rp_GetReadPointer(uint32_t* pos)
     return gen_GetReadPointer(pos);
 }
 
+int rp_updateData(rp_channel_t channel, float *data, uint32_t start, uint32_t length)
+{
+    return gen_updateData(channel,data,start,length);
+}
+
