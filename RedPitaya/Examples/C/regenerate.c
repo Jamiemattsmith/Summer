@@ -35,7 +35,7 @@ int main(int argc, char **argv){
 	rp_GenFreq(RP_CH_1, 120.0);
 
 	rp_GenOutEnable(RP_CH_1);
-	for(i=0;i<20;i++){
+	for(i=0;i<2000;i++){
 	rp_GetReadPointer(&posnow);
 	readings[i]=posnow;
 	}
