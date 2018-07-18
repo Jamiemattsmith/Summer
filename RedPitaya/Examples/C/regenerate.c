@@ -35,7 +35,7 @@ int main(int argc, char **argv){
 
 	rp_GenFreq(RP_CH_1, 120.0);
 	for(i=0;i<16384;i++){
-		half[i]=0.0;
+		half[i]=i/10;
 	}
 	rp_GenOutEnable(RP_CH_1);
 	//for(i=0;i<20000;i++){
