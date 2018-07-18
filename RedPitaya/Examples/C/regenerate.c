@@ -37,6 +37,9 @@ int main(int argc, char **argv){
 		half[(5*buff_size)+i] = sin(t[i+buff_size]);
 		half[(6*buff_size)+i] = 0.0;
 	}
+	for (int i=0; i<len;i=i+2){
+		half[i]=0.0;
+	}
 
 	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_DC);
 	rp_GenMode(RP_CH_1, RP_GEN_MODE_CONTINUOUS);
@@ -47,9 +50,8 @@ int main(int argc, char **argv){
 		half[(int) j]=j/len;
 	}*/
 	rp_updateData(RP_CH_1, zeros, 0,16384);
-	sleep(1);	
 	rp_GenOutEnable(RP_CH_1);
-	sleep(2);
+	//sleep(2);
 	while(1){
 		posold=posnow;
 		rp_GetReadPointer(&posnow);
