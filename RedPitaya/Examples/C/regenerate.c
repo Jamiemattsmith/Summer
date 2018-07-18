@@ -16,7 +16,7 @@ int main(int argc, char **argv){
 	int buff_size = 16384;
 	uint32_t posnow = 0;
 	uint32_t posold =0;
-	float zeros[16384];
+	float zeros[16384]={0.0};
 	/* Print error, if rp_Init() function failed */
 	if(rp_Init() != RP_OK){
 		fprintf(stderr, "Rp api init failed!\n");
@@ -30,7 +30,7 @@ int main(int argc, char **argv){
 
 	for (int i = 0; i < buff_size; ++i){
 		x[i] = sin(t[i]);
-		zeros[i]=0.0;
+		//zeros[i]=0.0;
 	}
 	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_DC);
 	rp_GenMode(RP_CH_1, RP_GEN_MODE_CONTINUOUS);
