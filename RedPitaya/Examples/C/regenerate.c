@@ -11,7 +11,7 @@ int main(int argc, char **argv){
 	int i;
 	int n;
 	int cnt=0;
-	float half[16384];
+	float half[24576];
 	int buff_size = 16384;
 	uint32_t posnow = 0;
 	uint32_t posold =0;
