@@ -15,7 +15,7 @@ int main(int argc, char **argv){
 	int buff_size = 16384;
 	uint32_t posnow = 0;
 	uint32_t posold =0;
-	//int *readings=(int *)malloc(2000 * sizeof(int));
+
 	/* Print error, if rp_Init() function failed */
 	if(rp_Init() != RP_OK){
 		fprintf(stderr, "Rp api init failed!\n");
@@ -36,26 +36,23 @@ int main(int argc, char **argv){
 	rp_GenAmp(RP_CH_1, 0.7);
 
 	rp_GenFreq(RP_CH_1, 120.0);
-	for(j=0.0;j<16384.0;j++){
-		half[(int) j]=j/16384;
+	for(j=0.0;j<24576.0;j++){
+		half[(int) j]=j/24576;
 	}
 	rp_GenOutEnable(RP_CH_1);
-	//for(i=0;i<20000;i++){
+
 	while(1){
-	posold=posnow;
-	rp_GetReadPointer(&posnow);
-	n=posnow-posold;
-	n=n>0? n:16384+n;
-	rp_updateData(RP_CH_1, half+cnt, posold,n);
-	cnt = cnt+n;
-	if (cnt>16384){	
-	break;
+		posold=posnow;
+		rp_GetReadPointer(&posnow);
+		n=posnow-posold;
+		n=n>0? n:16384+n;
+		rp_updateData(RP_CH_1, half+cnt, posold,n);
+		cnt = cnt+n;
+		if (cnt>24576){	
+			break;
+		}
 	}
-	}
-	/*for(i=0;i<2000;i++){
-	printf("%d\n",readings[i]);
-	}*/
-	/* Releasing resources */
+
 	free(x);
 	free(t);
 	rp_Release();
