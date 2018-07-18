@@ -9,6 +9,8 @@
 int main(int argc, char **argv){
 	float j;
 	int i;
+	int n;
+	int cnt=0;
 	float half[16384];
 	int buff_size = 16384;
 	uint32_t posnow = 0;
@@ -35,14 +37,20 @@ int main(int argc, char **argv){
 
 	rp_GenFreq(RP_CH_1, 120.0);
 	for(j=0.0;j<16384.0;j++){
-		half[(int) j]=j/100;
+		half[(int) j]=j/16384;
 	}
 	rp_GenOutEnable(RP_CH_1);
 	//for(i=0;i<20000;i++){
 	while(1){
 	posold=posnow;
 	rp_GetReadPointer(&posnow);
-	rp_updateData(RP_CH_1, half, posold,posnow-posold);
+	n=posnow-posold;
+	n=n>0? n:16384+n
+	rp_updateData(RP_CH_1, half, posold,n);
+	cnt = cnt+n;
+	if (cnt>16384){	
+	break;
+	}
 	}
 	/*for(i=0;i<2000;i++){
 	printf("%d\n",readings[i]);
