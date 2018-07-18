@@ -7,7 +7,7 @@
 #define M_PI 3.14159265358979323846
 
 int main(int argc, char **argv){
-	int len=24576;
+	int len=40000;
 	float j;
 	int i;
 	int n;
