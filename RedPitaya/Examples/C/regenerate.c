@@ -32,7 +32,7 @@ int main(int argc, char **argv){
 	}
 
 	for (c=fgetc(f);c!= EOF; c= fgetc(f)){
-		if ((char)c=="\n"){
+		if (c=='\n'){
 			len++;
 		}
 	}
