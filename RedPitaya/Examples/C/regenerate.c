@@ -31,7 +31,7 @@ int main(int argc, char **argv){
     		printf("Error opening file!\n");
     		exit(1);
 	}
-	printf("Counting Data for Memory Allocation");
+	printf("Counting Data for Memory Allocation\n");
 	for (c=getc(f);c!= EOF; c= getc(f)){
 		if (c=='\n'){
 			//printf("%c  %d\n",(char)c,len);
@@ -41,7 +41,7 @@ int main(int argc, char **argv){
 	printf("Counted Data: %d\n",len);
 	rewind(f);
 	float *half = (float *)malloc((len+16384) * sizeof(float));;
-	printf("Allocated Memory\nCollecting Data from SD Card");
+	printf("Allocated Memory\nCollecting Data from SD Card\n");
 	for (i=0; i<len; i++){
 		fscanf(f,"%f\n",&half[i]);
 	}
@@ -61,6 +61,8 @@ int main(int argc, char **argv){
 	while(1){
 		scanf("%s",cmnd);
 		if(!strcmp(cmnd,"exit")){break;}
+		cnt=0;
+		rp_GetReadPointer(&posnow);		
 		while(1){
 			posold=posnow;
 			rp_GetReadPointer(&posnow);
