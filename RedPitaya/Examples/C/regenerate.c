@@ -43,7 +43,7 @@ int main(int argc, char **argv){
 	rp_updateData(RP_CH_1, zeros, 0,16384);
 	sleep(1);	
 	rp_GenOutEnable(RP_CH_1);
-
+	sleep(2);
 	while(1){
 		posold=posnow;
 		rp_GetReadPointer(&posnow);
