@@ -37,7 +37,7 @@ int main(int argc, char **argv){
 			len++;
 		}
 	}
-	printf("Counted Data\n");
+	printf("Counted Data: %d\n",len);
 	rewind(f);
 	printf("Gone to top of file\n");
 	for (i=0; i<len; i++){
