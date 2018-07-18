@@ -28,7 +28,7 @@ int main(int argc, char **argv){
 		t[i] = (M_PI/2) / buff_size * i;
 	}
 
-	for (int i = 0; i < buff_size; ++i){
+	for (int i = 0; i < buff_size; i++){
 		half[i] = sin(t[i]);
 		half[buff_size+i]=0.0;
 		half[(2*buff_size)+i]=0.5-((0.25/buff_size)*i);
