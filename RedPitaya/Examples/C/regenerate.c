@@ -7,7 +7,7 @@
 #define M_PI 3.14159265358979323846
 
 int main(int argc, char **argv){
-	int len=40000;
+	int len=98304;
 	float j;
 	int i;
 	int n;
@@ -22,25 +22,29 @@ int main(int argc, char **argv){
 		fprintf(stderr, "Rp api init failed!\n");
 	}
 
-	float *t = (float *)malloc(buff_size * sizeof(float));
-	float *x = (float *)malloc(buff_size * sizeof(float));
-	for(i = 1; i < buff_size; i++){
-		t[i] = (2 * M_PI) / buff_size * i;
+	float *t = (float *)malloc(2*buff_size * sizeof(float));
+	//float *x = (float *)malloc(buff_size * sizeof(float));
+	for(i = 1; i < 2*buff_size; i++){
+		t[i] = (M_PI/2) / buff_size * i;
 	}
 
 	for (int i = 0; i < buff_size; ++i){
-		x[i] = sin(t[i]);
-		//zeros[i]=0.0;
+		half[i] = sin(t[i]);
+		half[buff_size+i]=0.0;
+		half[(2*buff_size)+i]=0.5-((0.25/buff_size)*i);
+		half[(3*buff_size)+i]=0.25+((0.25/buff_size)*i);
+		half[(4*buff_size)+i]=0.0;
+		half[(5*buff_size)+i] = sin(t[i+buff_size]);
 	}
+
 	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_DC);
 	rp_GenMode(RP_CH_1, RP_GEN_MODE_CONTINUOUS);
-	//rp_GenArbWaveform(RP_CH_1, x, 16384);
 	rp_GenAmp(RP_CH_1, 1.0);
 
 	rp_GenFreq(RP_CH_1, 120.0);
-	for(j=0.0;j<len;j++){
+	/*for(j=0.0;j<len;j++){
 		half[(int) j]=j/len;
-	}
+	}*/
 	rp_updateData(RP_CH_1, zeros, 0,16384);
 	sleep(1);	
 	rp_GenOutEnable(RP_CH_1);
@@ -59,7 +63,7 @@ int main(int argc, char **argv){
 		}
 	}
 
-	free(x);
+	//free(x);
 	free(t);
 	rp_Release();
 }
