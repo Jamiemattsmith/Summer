@@ -47,10 +47,12 @@ int main(int argc, char **argv){
 		rp_GetReadPointer(&posnow);
 		n=posnow-posold;
 		n=n>0? n:16384+n;
-		rp_updateData(RP_CH_1, half+cnt, posold,n);
-		cnt = cnt+n;
-		if (cnt>24576){	
-			break;
+		if (cnt !=24576){
+			if (cnt+n>24576){
+				n=24576-cnt;
+			}
+			rp_updateData(RP_CH_1, half+cnt, posold,n);
+			cnt = cnt+n;
 		}
 	}
 
