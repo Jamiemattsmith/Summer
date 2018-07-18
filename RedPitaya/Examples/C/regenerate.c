@@ -14,7 +14,7 @@ int main(int argc, char **argv){
 	int n;
 	int cnt=0;
 	float half[len];
-	int buff_size = 16384;
+	//int buff_size = 16384;
 	uint32_t posnow = 0;
 	uint32_t posold =0;
 	float zeros[16384]={0.0};
@@ -35,7 +35,8 @@ int main(int argc, char **argv){
 		if (c=="\n"){
 			len++;
 		}
-	)
+	}
+	rewind(f);
 	for (i=0; i<len; i++){
 		fscanf(f,"%f\n",&half[i]);
 	}
@@ -69,8 +70,6 @@ int main(int argc, char **argv){
 		}
 	}
 
-	//free(x);
-	free(t);
 	rp_Release();
 	fclose(f);
 }
