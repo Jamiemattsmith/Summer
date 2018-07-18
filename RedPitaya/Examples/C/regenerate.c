@@ -31,7 +31,7 @@ int main(int argc, char **argv){
     		exit(1);
 	}
 
-	for (c=getc(f);c!= EOF; c= getc(f)){
+	for (c=fgetc(f);c!= EOF; c= fgetc(f)){
 		if (c=="\n"){
 			len++;
 		}
