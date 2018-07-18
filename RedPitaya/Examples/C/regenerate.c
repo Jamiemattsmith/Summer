@@ -46,7 +46,7 @@ int main(int argc, char **argv){
 	rp_GetReadPointer(&posnow);
 	n=posnow-posold;
 	n=n>0? n:16384+n;
-	rp_updateData(RP_CH_1, half[cnt:cnt+n], posold,n);
+	rp_updateData(RP_CH_1, half+cnt, posold,n);
 	cnt = cnt+n;
 	if (cnt>16384){	
 	break;
