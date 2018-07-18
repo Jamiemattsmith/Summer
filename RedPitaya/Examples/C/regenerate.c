@@ -40,7 +40,8 @@ int main(int argc, char **argv){
 	for(j=0.0;j<len;j++){
 		half[(int) j]=j/len;
 	}
-	rp_updateData(RP_CH_1, zeros, 0,16384);	
+	rp_updateData(RP_CH_1, zeros, 0,16384);
+	sleep(0.2);	
 	rp_GenOutEnable(RP_CH_1);
 
 	while(1){
