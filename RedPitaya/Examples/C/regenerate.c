@@ -15,7 +15,7 @@ int main(int argc, char **argv){
 	int buff_size = 16384;
 	uint32_t posnow = 0;
 	uint32_t posold =0;
-
+	int zeros[16384];
 	/* Print error, if rp_Init() function failed */
 	if(rp_Init() != RP_OK){
 		fprintf(stderr, "Rp api init failed!\n");
@@ -33,12 +33,13 @@ int main(int argc, char **argv){
 	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_DC);
 	rp_GenMode(RP_CH_1, RP_GEN_MODE_CONTINUOUS);
 	//rp_GenArbWaveform(RP_CH_1, x, 16384);
-	rp_GenAmp(RP_CH_1, 0.0);
+	rp_GenAmp(RP_CH_1, 1.0);
 
 	rp_GenFreq(RP_CH_1, 120.0);
 	for(j=0.0;j<24576.0;j++){
 		half[(int) j]=j/24576;
 	}
+	rp_updateData(RP_CH_1, zeros, 0,16384);	
 	rp_GenOutEnable(RP_CH_1);
 
 	while(1){
