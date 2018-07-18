@@ -39,7 +39,7 @@ int main(int argc, char **argv){
 	}
 	printf("Counted Data: %d\n",len);
 	rewind(f);
-	float half[len+16384];
+	float *half = (float *)malloc((len+16384) * sizeof(float));;
 	for (i=0; i<len; i++){
 		fscanf(f,"%f\n",&half[i]);
 	}
@@ -69,7 +69,7 @@ int main(int argc, char **argv){
 			cnt = cnt+n;
 		}
 	}
-
+	free(half);
 	rp_Release();
 	fclose(f);
 }
