@@ -41,7 +41,7 @@ int main(int argc, char **argv){
 		half[(int) j]=j/len;
 	}
 	rp_updateData(RP_CH_1, zeros, 0,16384);
-	sleep(0.2);	
+	sleep(1);	
 	rp_GenOutEnable(RP_CH_1);
 
 	while(1){
