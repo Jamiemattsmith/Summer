@@ -80,22 +80,7 @@ int main(int argc, char **argv){
 				cnt = cnt+n;
 			}
 		}
-		cnt=0;
-		while(1){
-			posold=posnow;
-			rp_GetReadPointer(&posnow);
-			n=posnow-posold;
-			n=n>0? n:16384+n;
-			if (cnt !=16384){
-				if (cnt+n>16384){
-					n=16384-cnt;
-					rp_updateData(RP_CH_1, zeros, posold,n);
-					break;
-				}
-				rp_updateData(RP_CH_1, zeros, posold,n);
-				cnt = cnt+n;
-			}
-		}
+
 	}
 	free(half);
 	rp_Release();
