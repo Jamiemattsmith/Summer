@@ -39,11 +39,11 @@ int main(int argc, char **argv){
 	}
 	for (int i=0; i<buff_size;i=i+2){
 		half[i] = -sin(t[i]);
-		half[buff_size+i]=sin(t[i])-1;
+		half[buff_size+i]=0.5*sin(t[i])-1;
 		half[(2*buff_size)+i]=0.5*sin(t[i+buff_size])-1;
 		half[(3*buff_size)+i]=0.5*sin(t[i])-1;
 		half[(4*buff_size)+i]=0.5*sin(t[i+buff_size])-1;
-		half[(5*buff_size)+i] = 0.5*-sin(t[i+buff_size]);
+		half[(5*buff_size)+i] = -sin(t[i+buff_size]);
 		half[(6*buff_size)+i] = 0.0;
 	}
 
