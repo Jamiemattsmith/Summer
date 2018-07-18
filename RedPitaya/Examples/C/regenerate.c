@@ -30,7 +30,7 @@ int main(int argc, char **argv){
 
 	for (int i = 0; i < buff_size; ++i){
 		x[i] = sin(t[i]);
-		printf("%f\n",zeros[i]);
+		zeros[i]=0.0;
 	}
 	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_DC);
 	rp_GenMode(RP_CH_1, RP_GEN_MODE_CONTINUOUS);
