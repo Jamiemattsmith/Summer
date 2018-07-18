@@ -30,9 +30,9 @@ int main(int argc, char **argv){
 	for (int i = 0; i < buff_size; ++i){
 		x[i] = sin(t[i]);
 	}
-	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_ARBITRARY);
+	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_DC);
 	rp_GenMode(RP_CH_1, RP_GEN_MODE_CONTINUOUS);
-	rp_GenArbWaveform(RP_CH_1, x, 16384);
+	//rp_GenArbWaveform(RP_CH_1, x, 16384);
 	rp_GenAmp(RP_CH_1, 0.7);
 
 	rp_GenFreq(RP_CH_1, 120.0);
