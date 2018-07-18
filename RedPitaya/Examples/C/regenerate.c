@@ -7,7 +7,8 @@
 #define M_PI 3.14159265358979323846
 
 int main(int argc, char **argv){
-	int len=114688;
+	int len=0;
+	char c;
 	//float j;
 	int i;
 	int n;
@@ -22,29 +23,25 @@ int main(int argc, char **argv){
 		fprintf(stderr, "Rp api init failed!\n");
 	}
 
-	float *t = (float *)malloc(2*buff_size * sizeof(float));
-	//float *x = (float *)malloc(buff_size * sizeof(float));
-	for(i = 1; i < 2*buff_size; i++){
-		t[i] = (M_PI/2) / buff_size * i;
+	
+	FILE *f = fopen("data.txt", "r");
+	if (f == NULL)
+	{
+    		printf("Error opening file!\n");
+    		exit(1);
 	}
 
-	for (int i = 0; i < buff_size; i++){
-		half[i] = sin(t[i]);
-		half[buff_size+i]=0.0;
-		half[(2*buff_size)+i]=0.5-((0.25/buff_size)*i);
-		half[(3*buff_size)+i]=0.25+((0.25/buff_size)*i);
-		half[(4*buff_size)+i]=0.0;
-		half[(5*buff_size)+i] = sin(t[i+buff_size]);
-		half[(6*buff_size)+i] = 0.0;
+	for (c=getc(f);c!= EOF; c= getc(f)){
+		if (c=="\n"){
+			len++;
+		}
+	)
+	for (i=0; i<len; i++){
+		fscanf(f,"%f\n",&half[i]);
 	}
-	for (int i=0; i<buff_size;i=i+2){
-		half[i] = -sin(t[i]);
-		half[buff_size+i]=0.5*sin(t[i])-1;
-		half[(2*buff_size)+i]=0.5*sin(t[i+buff_size])-1;
-		half[(3*buff_size)+i]=0.5*sin(t[i])-1;
-		half[(4*buff_size)+i]=0.5*sin(t[i+buff_size])-1;
-		half[(5*buff_size)+i] = -sin(t[i+buff_size]);
-		half[(6*buff_size)+i] = 0.0;
+
+	for (i=0; i<len; i++){
+		printf("%f\n",half[i]);
 	}
 
 	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_DC);
@@ -75,4 +72,5 @@ int main(int argc, char **argv){
 	//free(x);
 	free(t);
 	rp_Release();
+	fclose(f);
 }
