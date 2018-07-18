@@ -8,7 +8,7 @@
 
 int main(int argc, char **argv){
 	int len=0;
-	int c=0;
+	char c;
 	//float j;
 	int i;
 	int n;
@@ -33,6 +33,7 @@ int main(int argc, char **argv){
 
 	for (c=fgetc(f);c!= EOF; c= fgetc(f)){
 		if (c=='\n'){
+			printf("%c",c);
 			len++;
 		}
 	}
