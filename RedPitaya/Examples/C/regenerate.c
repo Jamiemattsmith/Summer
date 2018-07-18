@@ -59,6 +59,7 @@ int main(int argc, char **argv){
 	printf("Commencing Generation\n");
 	rp_GenOutEnable(RP_CH_1);
 	while(1){
+		printf("Enter Command: ");
 		scanf("%s",cmnd);
 		if(!strcmp(cmnd,"exit")){break;}
 		cnt=0;
