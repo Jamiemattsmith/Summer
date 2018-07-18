@@ -9,6 +9,7 @@
 int main(int argc, char **argv){
 	int len=0;
 	int c;
+	char cmnd[4];
 	//float j;
 	int i;
 	int n;
@@ -30,7 +31,7 @@ int main(int argc, char **argv){
     		printf("Error opening file!\n");
     		exit(1);
 	}
-
+	printf("Counting Data for Memory Allocation");
 	for (c=getc(f);c!= EOF; c= getc(f)){
 		if (c=='\n'){
 			//printf("%c  %d\n",(char)c,len);
@@ -40,6 +41,7 @@ int main(int argc, char **argv){
 	printf("Counted Data: %d\n",len);
 	rewind(f);
 	float *half = (float *)malloc((len+16384) * sizeof(float));;
+	printf("Allocated Memory\nCollecting Data from SD Card");
 	for (i=0; i<len; i++){
 		fscanf(f,"%f\n",&half[i]);
 	}
@@ -47,7 +49,7 @@ int main(int argc, char **argv){
 		half[len+i]=0.0;
 	}
 	len=len+16384;	
-	printf("\nSaved Data\n");
+	printf("Collected Data\n");
 	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_DC);
 	rp_GenMode(RP_CH_1, RP_GEN_MODE_CONTINUOUS);
 	rp_GenAmp(RP_CH_1, 1.0);
@@ -57,16 +59,38 @@ int main(int argc, char **argv){
 	printf("Commencing Generation\n");
 	rp_GenOutEnable(RP_CH_1);
 	while(1){
-		posold=posnow;
-		rp_GetReadPointer(&posnow);
-		n=posnow-posold;
-		n=n>0? n:16384+n;
-		if (cnt !=len){
-			if (cnt+n>len){
-				n=len-cnt;
+		scanf("%s",cmnd)
+		if(cmnd=="exit"){break;}
+		while(1){
+			posold=posnow;
+			rp_GetReadPointer(&posnow);
+			n=posnow-posold;
+			n=n>0? n:16384+n;
+			if (cnt !=len){
+				if (cnt+n>len){
+					n=len-cnt;
+					rp_updateData(RP_CH_1, half+cnt, posold,n);
+					break;
+				}
+				rp_updateData(RP_CH_1, half+cnt, posold,n);
+				cnt = cnt+n;
 			}
-			rp_updateData(RP_CH_1, half+cnt, posold,n);
-			cnt = cnt+n;
+		}
+		cnt=0;
+		while(1){
+			posold=posnow;
+			rp_GetReadPointer(&posnow);
+			n=posnow-posold;
+			n=n>0? n:16384+n;
+			if (cnt !=16384){
+				if (cnt+n>16384){
+					n=16384-cnt;
+					rp_updateData(RP_CH_1, zeros, posold,n);
+					break;
+				}
+				rp_updateData(RP_CH_1, zeros, posold,n);
+				cnt = cnt+n;
+			}
 		}
 	}
 	free(half);
