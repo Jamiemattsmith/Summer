@@ -36,15 +36,17 @@ int main(int argc, char **argv){
 			len++;
 		}
 	}
+	printf("bom");
 	rewind(f);
+	printf("bom");
 	for (i=0; i<len; i++){
 		fscanf(f,"%f\n",&half[i]);
 	}
-
+	printf("bom");
 	for (i=0; i<len; i++){
 		printf("%f\n",half[i]);
 	}
-
+	printf("bom");
 	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_DC);
 	rp_GenMode(RP_CH_1, RP_GEN_MODE_CONTINUOUS);
 	rp_GenAmp(RP_CH_1, 1.0);
