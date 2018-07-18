@@ -33,7 +33,7 @@ int main(int argc, char **argv){
 
 	for (c=getc(f);c!= EOF; c= getc(f)){
 		if (c=='\n'){
-			printf("%c  %d\n",(char)c,len);
+			//printf("%c  %d\n",(char)c,len);
 			len++;
 		}
 	}
@@ -43,12 +43,12 @@ int main(int argc, char **argv){
 	printf("Gone to top of file\n");
 	for (i=0; i<len; i++){
 		fscanf(f,"%f\n",&half[i]);
-		printf("%d\n",i);
+		//printf("%d\n",i);
 	}
 	printf("Saved Data\n");
-	for (i=0; i<len; i++){
+	/*for (i=0; i<len; i++){
 		printf("%f\n",half[i]);
-	}
+	}*/
 	printf("Presented Data\n");
 	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_DC);
 	rp_GenMode(RP_CH_1, RP_GEN_MODE_CONTINUOUS);
