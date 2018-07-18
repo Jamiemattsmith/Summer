@@ -31,9 +31,9 @@ int main(int argc, char **argv){
     		exit(1);
 	}
 
-	for (c=fgetc(f);c!= EOF; c= fgetc(f)){
+	for (c=getc(f);c!= EOF; c= getc(f)){
 		if (c=='\n'){
-			printf("%c",c);
+			printf("%c  %d\n",c,len);
 			len++;
 		}
 	}
