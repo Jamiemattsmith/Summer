@@ -13,7 +13,7 @@ int main(int argc, char **argv){
 	int i;
 	int n;
 	int cnt=0;
-	float half[len];
+	
 	//int buff_size = 16384;
 	uint32_t posnow = 0;
 	uint32_t posold =0;
@@ -39,6 +39,7 @@ int main(int argc, char **argv){
 	}
 	printf("Counted Data: %d\n",len);
 	rewind(f);
+	float half[len];
 	printf("Gone to top of file\n");
 	for (i=0; i<len; i++){
 		fscanf(f,"%f\n",&half[i]);
