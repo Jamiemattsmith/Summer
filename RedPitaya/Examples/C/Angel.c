@@ -153,7 +153,7 @@ int main(int argc, char **argv){
 	}
 	printf("Saving Data to SD card\n");
 	for(i = NSMP; i !=1; i--){
-		fprintf(f,"%f\n",dat[i]);
+		fprintf(f,"%f\n",dat[NSMP-i]);
 	}
 	//head=reverse(head);
 	//display(head,f);
