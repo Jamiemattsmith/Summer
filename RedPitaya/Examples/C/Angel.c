@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include "redpitaya/rp.h"
 
-#define NSMP 1953125
+#define NSMP 19531250
 typedef struct node
 {
     float data;
