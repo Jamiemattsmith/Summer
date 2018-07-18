@@ -7,6 +7,7 @@
 #define M_PI 3.14159265358979323846
 
 int main(int argc, char **argv){
+	int len=24576;
 	float j;
 	int i;
 	int n;
@@ -36,8 +37,8 @@ int main(int argc, char **argv){
 	rp_GenAmp(RP_CH_1, 1.0);
 
 	rp_GenFreq(RP_CH_1, 120.0);
-	for(j=0.0;j<24576.0;j++){
-		half[(int) j]=j/24576;
+	for(j=0.0;j<len;j++){
+		half[(int) j]=j/len;
 	}
 	rp_updateData(RP_CH_1, zeros, 0,16384);	
 	rp_GenOutEnable(RP_CH_1);
@@ -47,9 +48,9 @@ int main(int argc, char **argv){
 		rp_GetReadPointer(&posnow);
 		n=posnow-posold;
 		n=n>0? n:16384+n;
-		if (cnt !=24576){
-			if (cnt+n>24576){
-				n=24576-cnt;
+		if (cnt !=len){
+			if (cnt+n>len){
+				n=len-cnt;
 			}
 			rp_updateData(RP_CH_1, half+cnt, posold,n);
 			cnt = cnt+n;
