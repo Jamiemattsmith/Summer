@@ -8,7 +8,7 @@
 
 int main(int argc, char **argv){
 	int len=98304;
-	float j;
+	//float j;
 	int i;
 	int n;
 	int cnt=0;
