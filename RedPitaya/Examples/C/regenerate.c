@@ -8,7 +8,7 @@
 
 int main(int argc, char **argv){
 	int len=0;
-	char c;
+	int c;
 	//float j;
 	int i;
 	int n;
@@ -33,7 +33,7 @@ int main(int argc, char **argv){
 
 	for (c=getc(f);c!= EOF; c= getc(f)){
 		if (c=='\n'){
-			printf("%c  %d\n",c,len);
+			printf("%c  %d\n",(char)c,len);
 			len++;
 		}
 	}
