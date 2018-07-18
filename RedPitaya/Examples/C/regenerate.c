@@ -59,7 +59,7 @@ int main(int argc, char **argv){
 	printf("Commencing Generation\n");
 	rp_GenOutEnable(RP_CH_1);
 	while(1){
-		scanf("%s",cmnd)
+		scanf("%s",cmnd);
 		if(cmnd=="exit"){break;}
 		while(1){
 			posold=posnow;
