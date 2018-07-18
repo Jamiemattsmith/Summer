@@ -39,17 +39,21 @@ int main(int argc, char **argv){
 	}
 	printf("Counted Data: %d\n",len);
 	rewind(f);
-	float half[len];
-	printf("Gone to top of file\n");
+	float half[len+16384];
+	//printf("Gone to top of file\n");
 	for (i=0; i<len; i++){
 		fscanf(f,"%f\n",&half[i]);
 		//printf("%d\n",i);
 	}
-	printf("Saved Data\n");
+	for (i=0; i<16384; i++){
+		half[len+i]=0.0;
+	}
+	len=len+16384;	
+	printf("\nSaved Data\n");
 	/*for (i=0; i<len; i++){
 		printf("%f\n",half[i]);
 	}*/
-	printf("Presented Data\n");
+
 	rp_GenWaveform(RP_CH_1, RP_WAVEFORM_DC);
 	rp_GenMode(RP_CH_1, RP_GEN_MODE_CONTINUOUS);
 	rp_GenAmp(RP_CH_1, 1.0);
@@ -59,6 +63,7 @@ int main(int argc, char **argv){
 		half[(int) j]=j/len;
 	}*/
 	rp_updateData(RP_CH_1, zeros, 0,16384);
+	printf("Commencing Generation\n");
 	rp_GenOutEnable(RP_CH_1);
 	//sleep(2);
 	while(1){
