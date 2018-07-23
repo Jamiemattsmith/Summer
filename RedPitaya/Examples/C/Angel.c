@@ -81,7 +81,7 @@ void dispose(node *head)
 }
 int main(int argc, char **argv){
 	int NSMP;
-	float *time;
+	float *time=1.0;
 	printf("Enter Time to Sample for:\n");
 	scanf("%f",time);
 	NSMP=(int)(*time*1953125);
