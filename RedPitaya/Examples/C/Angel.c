@@ -81,11 +81,10 @@ void dispose(node *head)
 }
 int main(int argc, char **argv){
 	int NSMP;
-	float *time;
-	*time=1.0;
+	float time;
 	printf("Enter Time to Sample for:\n");
-	scanf("%f",time);
-	NSMP=(int)(*time*1953125);
+	scanf("%f",&time);
+	NSMP=(int)(time*1953125);
         /* Print error, if rp_Init() function failed */
         if(rp_Init() != RP_OK){
                 fprintf(stderr, "Rp api init failed!\n");
