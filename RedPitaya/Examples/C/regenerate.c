@@ -70,7 +70,7 @@ int main(int argc, char **argv){
 			n=posnow-posold;
 			n=n>0? n:16384+n;
 			if (cnt !=len){
-				if (cnt+n>len){
+				if (cnt+n>=len){
 					n=len-cnt;
 					rp_updateData(RP_CH_1, half+cnt, posold,n);
 					printf("Broken\n");
