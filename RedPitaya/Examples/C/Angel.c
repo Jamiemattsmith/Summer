@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include "redpitaya/rp.h"
 
-#define NSMP 19531250
+#define NSMP 1953125
 typedef struct node
 {
     float data;
@@ -152,7 +152,7 @@ int main(int argc, char **argv){
 		if(cnt==NSMP){break;}
 	}
 	printf("Saving Data to SD card\n");
-	for(i = NSMP; i !=1; i--){
+	for(i = NSMP; i !=0; i--){
 		fprintf(f,"%f\n",dat[NSMP-i]);
 	}
 	//head=reverse(head);
