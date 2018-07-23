@@ -9,7 +9,7 @@
 int main(int argc, char **argv){
 	int len=0;
 	int c;
-	char cmnd[4];
+	char cmnd[20];
 	//float j;
 	int i;
 	int n;
@@ -56,31 +56,33 @@ int main(int argc, char **argv){
 
 	rp_GenFreq(RP_CH_1, 120.0);
 	rp_updateData(RP_CH_1, zeros, 0,16384);
-	printf("Commencing Generation\n");
 	rp_GenOutEnable(RP_CH_1);
 	while(1){
 		printf("Enter Command: ");
 		scanf("%s",cmnd);
 		if(!strcmp(cmnd,"exit")){break;}
-		cnt=0;
-		rp_GetReadPointer(&posnow);		
-		while(1){
-			posold=posnow;
-			rp_GetReadPointer(&posnow);
-			n=posnow-posold;
-			n=n>0? n:16384+n;
-			if (cnt !=len){
-				if (cnt+n>=len){
-					n=len-cnt;
+		if(!strcmp(cmnd,"generate")){
+			printf("Commencing Generation\n");
+			cnt=0;
+			rp_GetReadPointer(&posnow);		
+			while(1){
+				posold=posnow;
+				rp_GetReadPointer(&posnow);
+				n=posnow-posold;
+				n=n>0? n:16384+n;
+				if (cnt !=len){
+					if (cnt+n>=len){
+						n=len-cnt;
+						rp_updateData(RP_CH_1, half+cnt, posold,n);
+						printf("Broken\n");
+						break;
+					}
 					rp_updateData(RP_CH_1, half+cnt, posold,n);
-					printf("Broken\n");
-					break;
+					cnt = cnt+n;
 				}
-				rp_updateData(RP_CH_1, half+cnt, posold,n);
-				cnt = cnt+n;
 			}
 		}
-
+		else{printf("Command Not Valid\n");}
 	}
 	free(half);
 	rp_Release();
