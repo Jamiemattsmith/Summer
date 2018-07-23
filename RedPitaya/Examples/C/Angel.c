@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include "redpitaya/rp.h"
 
-#define NSMP 1953125
+//#define NSMP 1953125
 typedef struct node
 {
     float data;
@@ -80,7 +80,10 @@ void dispose(node *head)
     }
 }
 int main(int argc, char **argv){
-
+	char strNSMP[20];
+	printf("Enter Time to Sample for:\n");
+	scanf("%s",strNSMP);
+	int NSMP=(int)((float)strNSMP*1953125);
         /* Print error, if rp_Init() function failed */
         if(rp_Init() != RP_OK){
                 fprintf(stderr, "Rp api init failed!\n");
