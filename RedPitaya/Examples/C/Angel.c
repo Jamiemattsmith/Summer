@@ -159,10 +159,7 @@ int main(int argc, char **argv){
 		if(cnt==NSMP){break;}
 	}
 	printf("Saving Data to SD card\n");
-	float div;
 	for(i = NSMP; i !=0; i--){
-		div=1.5;
-		if (abs(dat[NSMP-i])>1){div=-1.5;}
 		fprintf(f,"%f\n",(dat[NSMP-i]/div));
 	}
 	//head=reverse(head);
