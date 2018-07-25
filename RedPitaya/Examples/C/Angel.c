@@ -119,6 +119,9 @@ int main(int argc, char **argv){
         rp_AcqReset();
 	rp_AcqSetArmKeep(true);
         rp_AcqSetDecimation(RP_DEC_32);
+	uint32_t decfac;
+	rp_AcqGetDecimationFactor(&decfac);
+	printf("%d",decfac);	
         rp_AcqSetTriggerLevel(RP_CH_1, 0);
         rp_AcqSetTriggerDelay(0);
 	printf("Allocated Memory\n");
