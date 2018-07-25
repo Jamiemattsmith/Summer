@@ -183,6 +183,7 @@ typedef enum {
 typedef enum {
     RP_SMP_125M,     //!< Sample rate 125Msps; Buffer time length 131us; Decimation 1
     RP_SMP_15_625M,  //!< Sample rate 15.625Msps; Buffer time length 1.048ms; Decimation 8
+    RP_SMP_3_906M,  
     RP_SMP_1_953M,   //!< Sample rate 1.953Msps; Buffer time length 8.388ms; Decimation 64
     RP_SMP_122_070K, //!< Sample rate 122.070ksps; Buffer time length 134.2ms; Decimation 1024
     RP_SMP_15_258K,  //!< Sample rate 15.258ksps; Buffer time length 1.073s; Decimation 8192

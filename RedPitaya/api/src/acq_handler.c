@@ -25,7 +25,7 @@
 // Decimation constants
 static const uint32_t DEC_1     = 1;
 static const uint32_t DEC_8     = 8;
-static const uint32_t DEC_32     = 32;
+static const uint32_t DEC_32    = 32;
 static const uint32_t DEC_64    = 64;
 static const uint32_t DEC_1024  = 1024;
 static const uint32_t DEC_8192  = 8192;
@@ -283,6 +283,7 @@ int acq_SetSamplingRate(rp_acq_sampling_rate_t sampling_rate)
     switch (sampling_rate) {
     case RP_SMP_125M:      return acq_SetDecimation(RP_DEC_1);
     case RP_SMP_15_625M:   return acq_SetDecimation(RP_DEC_8);
+    case RP_SMP_3_906M:    return acq_SetDecimation(RP_DEC_32);
     case RP_SMP_1_953M:    return acq_SetDecimation(RP_DEC_64);
     case RP_SMP_122_070K:  return acq_SetDecimation(RP_DEC_1024);
     case RP_SMP_15_258K:   return acq_SetDecimation(RP_DEC_8192);
@@ -300,6 +301,7 @@ int acq_GetSamplingRate(rp_acq_sampling_rate_t* sampling_rate)
     switch (decimation) {
     case RP_DEC_1:     *sampling_rate = RP_SMP_125M;     break;
     case RP_DEC_8:     *sampling_rate = RP_SMP_15_625M;  break;
+    case RP_DEC_32:    *sampling_rate = RP_SMP_3_906M;   break;
     case RP_DEC_64:    *sampling_rate = RP_SMP_1_953M;   break;
     case RP_DEC_1024:  *sampling_rate = RP_SMP_122_070K; break;
     case RP_DEC_8192:  *sampling_rate = RP_SMP_15_258K;  break;
@@ -321,6 +323,7 @@ int acq_GetSamplingRateHz(float* sampling_rate)
     switch(decimation){
         case RP_DEC_1:     *sampling_rate = max_rate / 1;     break;
         case RP_DEC_8:     *sampling_rate = max_rate / 8;     break;
+        case RP_DEC_32:    *sampling_rate = max_rate / 32;    break;
         case RP_DEC_64:    *sampling_rate = max_rate / 64;    break;
         case RP_DEC_1024:  *sampling_rate = max_rate / 1024;  break;
         case RP_DEC_8192:  *sampling_rate = max_rate / 8192;  break;
