@@ -7,7 +7,7 @@
 #include "redpitaya/rp.h"
 
 //#define NSMP 1953125
-typedef struct node
+/*typedef struct node
 {
     float data;
     struct node* next;
@@ -78,7 +78,7 @@ void dispose(node *head)
             cursor = tmp;
         }
     }
-}
+}*/
 int main(int argc, char **argv){
 	int NSMP;
 	float time;

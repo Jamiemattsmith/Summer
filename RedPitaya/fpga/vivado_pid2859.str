@@ -272,3 +272,4 @@ selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 161, 98); /
 selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 155, 135); // dn (ae, ck)
 // [Engine Memory]: 977 MB (+791kb) [00:16:52]
 // HMemoryUtils.trashcanNow. Engine heap size: 986 MB. GUI used memory: 46 MB. Current time: 7/25/18 9:32:24 AM BST
+// HMemoryUtils.trashcanNow. Engine heap size: 987 MB. GUI used memory: 44 MB. Current time: 7/25/18 10:02:24 AM BST
