@@ -121,7 +121,7 @@ int main(int argc, char **argv){
         rp_AcqSetDecimation(RP_DEC_32);
 	uint32_t decfac;
 	rp_AcqGetDecimationFactor(&decfac);
-	printf("%d",decfac);	
+	printf("Decimation Factor: %d\n",decfac);	
         rp_AcqSetTriggerLevel(RP_CH_1, 0);
         rp_AcqSetTriggerDelay(0);
 	printf("Allocated Memory\n");

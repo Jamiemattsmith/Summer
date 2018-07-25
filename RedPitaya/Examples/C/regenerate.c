@@ -54,7 +54,7 @@ int main(int argc, char **argv){
 	rp_GenMode(RP_CH_1, RP_GEN_MODE_CONTINUOUS);
 	rp_GenAmp(RP_CH_1, 1.0);
 
-	rp_GenFreq(RP_CH_1, 238.0);
+	rp_GenFreq(RP_CH_1, 120.0);
 	rp_updateData(RP_CH_1, zeros, 0,16384);
 	rp_GenOutEnable(RP_CH_1);
 	while(1){
