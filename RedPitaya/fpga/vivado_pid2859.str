@@ -270,3 +270,4 @@ dismissDialog("Tcl Command Line"); // bx (ck)
 // Tcl Message: update_compile_order -fileset sources_1 
 selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 161, 98); // dn (ae, ck)
 selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 155, 135); // dn (ae, ck)
+// [Engine Memory]: 977 MB (+791kb) [00:16:52]
