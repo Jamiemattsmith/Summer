@@ -87,7 +87,7 @@ int main(int argc, char **argv){
 	rp_AcqGetDecimationFactor(&decfac);
 	printf("Enter Time to Sample for:\n");
 	scanf("%f",&time);
-	NSMP=(int)(time*(125000000/decfac));
+	NSMP=(int)((time*125000000)/decfac);
         /* Print error, if rp_Init() function failed */
         if(rp_Init() != RP_OK){
                 fprintf(stderr, "Rp api init failed!\n");
