@@ -84,7 +84,7 @@ int main(int argc, char **argv){
 	float time;
 	printf("Enter Time to Sample for:\n");
 	scanf("%f",&time);
-	NSMP=(int)(time*1953125*1.5);
+	NSMP=(int)(time*1953125);
         /* Print error, if rp_Init() function failed */
         if(rp_Init() != RP_OK){
                 fprintf(stderr, "Rp api init failed!\n");
@@ -118,7 +118,7 @@ int main(int argc, char **argv){
 	float freq=0;
         rp_AcqReset();
 	rp_AcqSetArmKeep(true);
-        rp_AcqSetDecimation(RP_DEC_32);
+        rp_AcqSetDecimation(RP_DEC_64);
 	uint32_t decfac;
 	rp_AcqGetDecimationFactor(&decfac);
 	printf("Decimation Factor: %d\n",decfac);	
