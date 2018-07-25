@@ -221,6 +221,7 @@ int acq_SetDecimation(rp_acq_decimation_t decimation)
     switch (decimation) {
     case RP_DEC_1:     osc_SetDecimation(DEC_1);     break;
     case RP_DEC_8:     osc_SetDecimation(DEC_8);     break;
+    case RP_DEC_32:    osc_SetDecimation(DEC_32);    break;
     case RP_DEC_64:    osc_SetDecimation(DEC_64);    break;
     case RP_DEC_1024:  osc_SetDecimation(DEC_1024);  break;
     case RP_DEC_8192:  osc_SetDecimation(DEC_8192);  break;
@@ -244,6 +245,7 @@ int acq_GetDecimation(rp_acq_decimation_t* decimation)
 
     if      (decimationVal == DEC_1)      *decimation = RP_DEC_1;
     else if (decimationVal == DEC_8)      *decimation = RP_DEC_8;
+    else if (decimationVal == DEC_32)     *decimation = RP_DEC_32;
     else if (decimationVal == DEC_64)     *decimation = RP_DEC_64;
     else if (decimationVal == DEC_1024)   *decimation = RP_DEC_1024;
     else if (decimationVal == DEC_8192)   *decimation = RP_DEC_8192;
@@ -263,6 +265,7 @@ int acq_GetDecimationFactor(uint32_t* decimation)
     switch (decimationVal) {
     case RP_DEC_1:     *decimation = DEC_1;     break;
     case RP_DEC_8:     *decimation = DEC_8;     break;
+    case RP_DEC_32:    *decimation = DEC_32;    break;
     case RP_DEC_64:    *decimation = DEC_64;    break;
     case RP_DEC_1024:  *decimation = DEC_1024;  break;
     case RP_DEC_8192:  *decimation = DEC_8192;  break;
