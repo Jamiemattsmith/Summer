@@ -82,12 +82,9 @@ void dispose(node *head)
 int main(int argc, char **argv){
 	int NSMP;
 	float time;
-        rp_AcqSetDecimation(RP_DEC_32);
-	uint32_t decfac;
-	rp_AcqGetDecimationFactor(&decfac);
 	printf("Enter Time to Sample for:\n");
 	scanf("%f",&time);
-	NSMP=(int)((time*125000000)/(float)decfac);
+	NSMP=(int)(time*1953125*2);
         /* Print error, if rp_Init() function failed */
         if(rp_Init() != RP_OK){
                 fprintf(stderr, "Rp api init failed!\n");
@@ -121,7 +118,9 @@ int main(int argc, char **argv){
 	float freq=0;
         rp_AcqReset();
 	rp_AcqSetArmKeep(true);
-
+        rp_AcqSetDecimation(RP_DEC_32);
+	uint32_t decfac;
+	rp_AcqGetDecimationFactor(&decfac);
 	printf("Decimation Factor: %d\n",decfac);	
         rp_AcqSetTriggerLevel(RP_CH_1, 0);
         rp_AcqSetTriggerDelay(0);
