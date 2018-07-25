@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date             : Wed Jul 25 09:09:32 2018
+| Date             : Wed Jul 25 11:31:58 2018
 | Host             : jzsmith-VirtualBox running 64-bit Ubuntu 18.04 LTS
 | Command          : report_power -file out/post_route_power.rpt
 | Design           : red_pitaya_top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 2.060        |
+| Total On-Chip Power (W)  | 2.059        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.924        |
+| Dynamic (W)              | 1.923        |
 | Device Static (W)        | 0.137        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 61.2         |
-| Junction Temperature (C) | 48.8         |
+| Max Ambient (C)          | 61.3         |
+| Junction Temperature (C) | 48.7         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,23 +52,23 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.034 |       14 |       --- |             --- |
-| Slice Logic             |     0.028 |    11008 |       --- |             --- |
-|   LUT as Logic          |     0.024 |     4582 |     17600 |           26.03 |
+| Clocks                  |     0.033 |       14 |       --- |             --- |
+| Slice Logic             |     0.028 |    10983 |       --- |             --- |
+|   LUT as Logic          |     0.024 |     4569 |     17600 |           25.96 |
 |   CARRY4                |     0.003 |      493 |      4400 |           11.20 |
-|   Register              |     0.001 |     4587 |     35200 |           13.03 |
-|   F7/F8 Muxes           |    <0.001 |       90 |     17600 |            0.51 |
+|   Register              |     0.001 |     4589 |     35200 |           13.04 |
+|   F7/F8 Muxes           |    <0.001 |       83 |     17600 |            0.47 |
 |   LUT as Shift Register |    <0.001 |       45 |      6000 |            0.75 |
 |   Others                |     0.000 |      265 |       --- |             --- |
-| Signals                 |     0.039 |     8874 |       --- |             --- |
-| Block RAM               |     0.091 |       28 |        60 |           46.67 |
+| Signals                 |     0.039 |     8868 |       --- |             --- |
+| Block RAM               |     0.092 |       28 |        60 |           46.67 |
 | PLL                     |     0.097 |        1 |         2 |           50.00 |
 | DSPs                    |     0.029 |       22 |        80 |           27.50 |
 | I/O                     |     0.319 |       91 |       100 |           91.00 |
 | XADC                    |     0.004 |        1 |       --- |             --- |
 | PS7                     |     1.281 |        1 |       --- |             --- |
 | Static Power            |     0.137 |          |           |                 |
-| Total                   |     2.060 |          |           |                 |
+| Total                   |     2.059 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,7 +78,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.233 |       0.224 |      0.009 |
+| Vccint    |       1.000 |     0.232 |       0.223 |      0.009 |
 | Vccaux    |       1.800 |     0.066 |       0.057 |      0.009 |
 | Vcco33    |       3.300 |     0.093 |       0.092 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -161,21 +161,21 @@ Table of Contents
 +--------------------------------------------------------------------------------+-----------+
 | Name                                                                           | Power (W) |
 +--------------------------------------------------------------------------------+-----------+
-| red_pitaya_top                                                                 |     1.924 |
+| red_pitaya_top                                                                 |     1.923 |
 |   i_ams                                                                        |     0.001 |
 |   i_asg                                                                        |     0.076 |
 |     ch[0]                                                                      |     0.036 |
 |     ch[1]                                                                      |     0.036 |
 |   i_id                                                                         |    <0.001 |
 |   i_pid                                                                        |     0.033 |
-|     i_pid11                                                                    |     0.007 |
+|     i_pid11                                                                    |     0.008 |
 |     i_pid12                                                                    |     0.007 |
 |     i_pid21                                                                    |     0.008 |
 |     i_pid22                                                                    |     0.008 |
 |   i_scope                                                                      |     0.075 |
 |     i_dfilt1_cha                                                               |     0.010 |
 |     i_dfilt1_chb                                                               |     0.010 |
-|     i_wr0                                                                      |     0.003 |
+|     i_wr0                                                                      |     0.002 |
 |     i_wr1                                                                      |     0.002 |
 |   iobuf_exp_n[0]                                                               |     0.002 |
 |   iobuf_exp_n[1]                                                               |     0.002 |
@@ -238,8 +238,8 @@ Table of Contents
 |             SEQ_COUNTER                                                        |    <0.001 |
 |       processing_system7                                                       |     1.284 |
 |         inst                                                                   |     1.284 |
-|       xadc                                                                     |     0.008 |
-|         inst                                                                   |     0.008 |
+|       xadc                                                                     |     0.009 |
+|         inst                                                                   |     0.009 |
 |           AXI_LITE_IPIF_I                                                      |     0.002 |
 |             I_SLAVE_ATTACHMENT                                                 |     0.002 |
 |               I_DECODER                                                        |    <0.001 |
@@ -275,7 +275,7 @@ Table of Contents
 |           SOFT_RESET_I                                                         |    <0.001 |
 |   pwm[0]                                                                       |     0.001 |
 |   pwm[1]                                                                       |     0.001 |
-|   pwm[2]                                                                       |     0.002 |
+|   pwm[2]                                                                       |     0.001 |
 |   pwm[3]                                                                       |     0.001 |
 |   sys_bus_interconnect                                                         |    <0.001 |
 +--------------------------------------------------------------------------------+-----------+
