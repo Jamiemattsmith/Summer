@@ -194,3 +194,4 @@ dismissDialog("Tcl Command Line"); // bx (ck)
 // TclEventType: DG_GRAPH_GENERATED
 // Tcl Message: update_compile_order -fileset sources_1 
 // [GUI Memory]: 92 MB (+1359kb) [00:03:01]
+// HMemoryUtils.trashcanNow. Engine heap size: 994 MB. GUI used memory: 46 MB. Current time: 7/25/18 11:55:23 AM BST
