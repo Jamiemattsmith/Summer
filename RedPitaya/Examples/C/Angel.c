@@ -84,7 +84,7 @@ int main(int argc, char **argv){
 	float time;
 	printf("Enter Time to Sample for:\n");
 	scanf("%f",&time);
-	NSMP=(int)(time*1953125);
+	NSMP=(int)(time*1953125*2);
         /* Print error, if rp_Init() function failed */
         if(rp_Init() != RP_OK){
                 fprintf(stderr, "Rp api init failed!\n");
