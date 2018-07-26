@@ -355,7 +355,8 @@ assign dac_b = (^dac_b_sum[15-1:15-2]) ? {dac_b_sum[15-1], {13{~dac_b_sum[15-1]}
 always @(posedge dac_clk_1x)
 begin
   dac_dat_a <= {dac_a[14-1], ~dac_a[14-2:0]};
-  dac_dat_b <= {dac_b[14-1], ~dac_b[14-2:0]};
+  //dac_dat_b <= {dac_b[14-1], ~dac_b[14-2:0]};
+  dac_dat_b <= adc_dat_raw[0];
 end
 
 // DDR outputs

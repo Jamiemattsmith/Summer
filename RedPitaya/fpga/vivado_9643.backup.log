@@ -517,3 +517,5 @@ Wrote  : </home/jzsmith/git/RedPitaya/fpga/prj/classic/ip/myproj/project_1.srcs/
 Wrote  : </home/jzsmith/git/RedPitaya/fpga/prj/classic/ip/myproj/project_1.srcs/sources_1/bd/system/ui/bd_c954508f.ui> 
 update_compile_order -fileset sources_1
 WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 25 15:50:58 2018...
