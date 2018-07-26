@@ -57,6 +57,7 @@ int main(int argc, char **argv){
 	rp_GenFreq(RP_CH_1, 143.95);
 	rp_updateData(RP_CH_1, zeros, 0,16384);
 	rp_GenOutEnable(RP_CH_1);
+	rp_GenOutEnable(RP_CH_2);
 	while(1){
 		printf("Enter Command: ");
 		scanf("%s",cmnd);

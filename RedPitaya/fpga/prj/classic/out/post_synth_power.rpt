@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date             : Thu Jul 26 09:40:32 2018
+| Date             : Thu Jul 26 15:17:14 2018
 | Host             : jzsmith-VirtualBox running 64-bit Ubuntu 18.04 LTS
 | Command          : report_power -file out/post_synth_power.rpt
 | Design           : red_pitaya_top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 2.023        |
+| Total On-Chip Power (W)  | 1.974        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.888        |
-| Device Static (W)        | 0.136        |
+| Dynamic (W)              | 1.839        |
+| Device Static (W)        | 0.135        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 61.7         |
-| Junction Temperature (C) | 48.3         |
+| Max Ambient (C)          | 62.2         |
+| Junction Temperature (C) | 47.8         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,23 +53,23 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.048 |       15 |       --- |             --- |
-| Slice Logic             |     0.032 |    11133 |       --- |             --- |
-|   LUT as Logic          |     0.027 |     4521 |     17600 |           25.69 |
+| Slice Logic             |     0.032 |    11141 |       --- |             --- |
+|   LUT as Logic          |     0.027 |     4541 |     17600 |           25.80 |
 |   CARRY4                |     0.004 |      493 |      4400 |           11.20 |
 |   Register              |     0.002 |     4725 |     35200 |           13.42 |
-|   F7/F8 Muxes           |    <0.001 |       86 |     17600 |            0.49 |
+|   F7/F8 Muxes           |    <0.001 |       65 |     17600 |            0.37 |
 |   LUT as Shift Register |    <0.001 |       67 |      6000 |            1.12 |
 |   Others                |     0.000 |      270 |       --- |             --- |
 |   BUFG                  |     0.000 |        1 |        32 |            3.13 |
-| Signals                 |     0.041 |    10075 |       --- |             --- |
+| Signals                 |     0.040 |    10153 |       --- |             --- |
 | Block RAM               |     0.108 |       28 |        60 |           46.67 |
 | PLL                     |     0.097 |        1 |         2 |           50.00 |
 | DSPs                    |     0.028 |       22 |        80 |           27.50 |
-| I/O                     |     0.248 |       91 |       100 |           91.00 |
+| I/O                     |     0.200 |       91 |       100 |           91.00 |
 | XADC                    |     0.004 |        1 |       --- |             --- |
 | PS7                     |     1.281 |        1 |       --- |             --- |
-| Static Power            |     0.136 |          |           |                 |
-| Total                   |     2.023 |          |           |                 |
+| Static Power            |     0.135 |          |           |                 |
+| Total                   |     1.974 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -80,19 +80,19 @@ Table of Contents
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
 | Vccint    |       1.000 |     0.266 |       0.257 |      0.009 |
-| Vccaux    |       1.800 |     0.065 |       0.056 |      0.009 |
-| Vcco33    |       3.300 |     0.072 |       0.071 |      0.001 |
+| Vccaux    |       1.800 |     0.064 |       0.055 |      0.009 |
+| Vcco33    |       3.300 |     0.058 |       0.057 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.002 |       0.001 |      0.001 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.012 |       0.009 |      0.003 |
+| Vccbram   |       1.000 |     0.011 |       0.009 |      0.002 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.702 |       0.668 |      0.034 |
+| Vccpint   |       1.000 |     0.701 |       0.668 |      0.034 |
 | Vccpaux   |       1.800 |     0.038 |       0.027 |      0.010 |
 | Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.356 |       0.354 |      0.002 |
@@ -166,7 +166,7 @@ Table of Contents
 +--------------------------------------------------------------------------------+-----------+
 | Name                                                                           | Power (W) |
 +--------------------------------------------------------------------------------+-----------+
-| red_pitaya_top                                                                 |     1.887 |
+| red_pitaya_top                                                                 |     1.839 |
 |   i_ams                                                                        |     0.001 |
 |   i_asg                                                                        |     0.090 |
 |     ch[0]                                                                      |     0.043 |

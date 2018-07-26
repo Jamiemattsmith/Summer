@@ -55,6 +55,7 @@ module red_pitaya_scope #(
    input                 adc_rstn_i      ,  // ADC reset - active low
    input      [ 14-1: 0] adc_a_i         ,  // ADC data CHA
    input      [ 14-1: 0] adc_b_i         ,  // ADC data CHB
+   output     [ 14-1: 0] filtered        ,
    // trigger sources
    input                 trig_ext_i      ,  // external trigger
    input                 trig_asg_i      ,  // ASG trigger
@@ -114,7 +115,7 @@ reg  [ 25-1: 0] set_b_filt_pp  ;
 
 assign adc_a_filt_in = adc_a_i ;
 assign adc_b_filt_in = adc_b_i ;
-
+assign adc_b_filt_out = filtered;
 red_pitaya_dfilt1 i_dfilt1_cha (
    // ADC
   .adc_clk_i   ( adc_clk_i       ),  // ADC clock
@@ -143,9 +144,8 @@ red_pitaya_dfilt1 i_dfilt1_chb (
 
 //---------------------------------------------------------------------------------
 //  Decimate input data
-
 reg  [ 14-1: 0] adc_a_dat     ;
-reg  [ 14-1: 0] adc_b_dat     ;
+reg  [ 14-1: 0] adc_b_dat;
 reg  [ 32-1: 0] adc_a_sum     ;
 reg  [ 32-1: 0] adc_b_sum     ;
 reg  [ 17-1: 0] set_dec       ;
@@ -176,8 +176,6 @@ end else begin
       17'h0     : begin adc_a_dat <= adc_a_filt_out;            adc_b_dat <= adc_b_filt_out;        end
       17'h1     : begin adc_a_dat <= adc_a_sum[15+0 :  0];      adc_b_dat <= adc_b_sum[15+0 :  0];  end
       17'h8     : begin adc_a_dat <= adc_a_sum[15+3 :  3];      adc_b_dat <= adc_b_sum[15+3 :  3];  end
-      17'h20    : begin adc_a_dat <= adc_a_sum[15+5 :  5];      adc_b_dat <= adc_b_sum[15+5 :  5];  end
-      17'h35    : begin adc_a_dat <= adc_a_sum[15+6 :  6];      adc_b_dat <= adc_b_sum[15+5 :  5];  end
       17'h40    : begin adc_a_dat <= adc_a_sum[15+6 :  6];      adc_b_dat <= adc_b_sum[15+6 :  6];  end
       17'h400   : begin adc_a_dat <= adc_a_sum[15+10: 10];      adc_b_dat <= adc_b_sum[15+10: 10];  end
       17'h2000  : begin adc_a_dat <= adc_a_sum[15+13: 13];      adc_b_dat <= adc_b_sum[15+13: 13];  end

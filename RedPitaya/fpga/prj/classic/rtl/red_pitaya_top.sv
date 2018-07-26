@@ -145,6 +145,8 @@ localparam type SBG_T = logic signed [14-1:0];  // generate
 
 SBA_T [MNA-1:0]          adc_dat;
 
+SBA_T          adc_filtered;
+
 // DAC signals
 logic                    dac_clk_1x;
 logic                    dac_clk_2x;
@@ -356,7 +358,7 @@ always @(posedge dac_clk_1x)
 begin
   dac_dat_a <= {dac_a[14-1], ~dac_a[14-2:0]};
   //dac_dat_b <= {dac_b[14-1], ~dac_b[14-2:0]};
-  dac_dat_b <= adc_dat_raw[0];
+  dac_dat_b <= adc_filtered;
 end
 
 // DDR outputs
@@ -404,6 +406,7 @@ red_pitaya_scope i_scope (
   // ADC
   .adc_a_i       (adc_dat[0]  ),  // CH 1
   .adc_b_i       (adc_dat[1]  ),  // CH 2
+  .filtered      (adc_filtered),
   .adc_clk_i     (adc_clk     ),  // clock
   .adc_rstn_i    (adc_rstn    ),  // reset - active low
   .trig_ext_i    (gpio.i[8]   ),  // external trigger
