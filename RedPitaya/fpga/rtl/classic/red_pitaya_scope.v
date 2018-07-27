@@ -55,7 +55,6 @@ module red_pitaya_scope #(
    input                 adc_rstn_i      ,  // ADC reset - active low
    input      [ 14-1: 0] adc_a_i         ,  // ADC data CHA
    input      [ 14-1: 0] adc_b_i         ,  // ADC data CHB
-   output     [ 14-1: 0] filtered        ,
    // trigger sources
    input                 trig_ext_i      ,  // external trigger
    input                 trig_asg_i      ,  // ASG trigger
@@ -115,7 +114,7 @@ reg  [ 25-1: 0] set_b_filt_pp  ;
 
 assign adc_a_filt_in = adc_a_i ;
 assign adc_b_filt_in = adc_b_i ;
-assign adc_b_filt_out = filtered;
+
 red_pitaya_dfilt1 i_dfilt1_cha (
    // ADC
   .adc_clk_i   ( adc_clk_i       ),  // ADC clock
