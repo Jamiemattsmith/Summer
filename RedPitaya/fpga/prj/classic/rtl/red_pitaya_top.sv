@@ -358,7 +358,7 @@ always @(posedge dac_clk_1x)
 begin
   dac_dat_a <= {dac_a[14-1], ~dac_a[14-2:0]};
   //dac_dat_b <= {dac_b[14-1], ~dac_b[14-2:0]};
-  dac_dat_b <= adc_filtered;
+  dac_dat_b <= {adc_filtered[14-1], ~adc_filtered[14-2:0]};
 end
 
 // DDR outputs
