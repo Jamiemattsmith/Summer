@@ -159,7 +159,9 @@ logic signed [15-1:0] dac_a_sum, dac_b_sum;
 
 // ASG
 SBG_T [2-1:0]            asg_dat;
-
+SBG_T [64-1:0]		m_avg;
+int i;
+logic [20-1:0] m_avg_sum;
 // PID
 SBA_T [2-1:0]            pid_dat;
 
@@ -354,11 +356,23 @@ assign dac_a = (^dac_a_sum[15-1:15-2]) ? {dac_a_sum[15-1], {13{~dac_a_sum[15-1]}
 assign dac_b = (^dac_b_sum[15-1:15-2]) ? {dac_b_sum[15-1], {13{~dac_b_sum[15-1]}}} : dac_b_sum[14-1:0];
 
 // output registers + signed to unsigned (also to negative slope)
-always @(posedge dac_clk_1x)
-begin
+always @(posedge dac_clk_1x)begin
+if(adc_rstn==1'b0) begin
+i<=0;
+m_avg<='0;
+m_avg_sum='0;
+end
+
+ if(i>=63)begin
+  i<=0;
+  end else begin
+  i<=i+1;
+  end
+  m_avg_sum<=m_avg_sum+	adc_dat_raw[1]-m_avg[i];
+  m_avg[i]<=adc_dat_raw[1];
   dac_dat_a <= {dac_a[14-1], ~dac_a[14-2:0]};
   //dac_dat_b <= {dac_b[14-1], ~dac_b[14-2:0]};
-  dac_dat_b <= {adc_filtered[14-1], ~adc_filtered[14-2:0]};
+  dac_dat_b <= m_avg_sum[19:6];
 end
 
 // DDR outputs
