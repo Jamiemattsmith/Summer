@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date             : Mon Jul 30 15:58:43 2018
+| Date             : Mon Jul 30 16:13:37 2018
 | Host             : jzsmith-VirtualBox running 64-bit Ubuntu 18.04 LTS
 | Command          : report_power -file out/post_route_power.rpt
 | Design           : red_pitaya_top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 2.088        |
+| Total On-Chip Power (W)  | 2.083        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.951        |
+| Dynamic (W)              | 1.946        |
 | Device Static (W)        | 0.137        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 60.9         |
-| Junction Temperature (C) | 49.1         |
+| Max Ambient (C)          | 61.0         |
+| Junction Temperature (C) | 49.0         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,15 +52,15 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.038 |       14 |       --- |             --- |
-| Slice Logic             |     0.038 |    13724 |       --- |             --- |
-|   LUT as Logic          |     0.034 |     6130 |     17600 |           34.83 |
+| Clocks                  |     0.039 |       14 |       --- |             --- |
+| Slice Logic             |     0.035 |    13652 |       --- |             --- |
+|   LUT as Logic          |     0.031 |     6044 |     17600 |           34.34 |
 |   CARRY4                |     0.003 |      510 |      4400 |           11.59 |
-|   Register              |     0.001 |     5530 |     35200 |           15.71 |
-|   F7/F8 Muxes           |    <0.001 |      233 |     17600 |            1.32 |
+|   Register              |     0.001 |     5542 |     35200 |           15.74 |
+|   F7/F8 Muxes           |    <0.001 |      179 |     17600 |            1.02 |
 |   LUT as Shift Register |    <0.001 |       45 |      6000 |            0.75 |
 |   Others                |     0.000 |      265 |       --- |             --- |
-| Signals                 |     0.052 |    10379 |       --- |             --- |
+| Signals                 |     0.049 |    10422 |       --- |             --- |
 | Block RAM               |     0.091 |       28 |        60 |           46.67 |
 | PLL                     |     0.097 |        1 |         2 |           50.00 |
 | DSPs                    |     0.029 |       22 |        80 |           27.50 |
@@ -68,7 +68,7 @@ Table of Contents
 | XADC                    |     0.004 |        1 |       --- |             --- |
 | PS7                     |     1.281 |        1 |       --- |             --- |
 | Static Power            |     0.137 |          |           |                 |
-| Total                   |     2.088 |          |           |                 |
+| Total                   |     2.083 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,7 +78,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.260 |       0.251 |      0.009 |
+| Vccint    |       1.000 |     0.255 |       0.246 |      0.009 |
 | Vccaux    |       1.800 |     0.066 |       0.057 |      0.009 |
 | Vcco33    |       3.300 |     0.093 |       0.092 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -161,10 +161,10 @@ Table of Contents
 +--------------------------------------------------------------------------------+-----------+
 | Name                                                                           | Power (W) |
 +--------------------------------------------------------------------------------+-----------+
-| red_pitaya_top                                                                 |     1.951 |
+| red_pitaya_top                                                                 |     1.946 |
 |   i_ams                                                                        |     0.001 |
-|   i_asg                                                                        |     0.076 |
-|     ch[0]                                                                      |     0.036 |
+|   i_asg                                                                        |     0.078 |
+|     ch[0]                                                                      |     0.039 |
 |     ch[1]                                                                      |     0.036 |
 |   i_id                                                                         |    <0.001 |
 |   i_pid                                                                        |     0.033 |
@@ -202,9 +202,9 @@ Table of Contents
 |   iobuf_led[6]                                                                 |     0.002 |
 |   iobuf_led[7]                                                                 |     0.002 |
 |   pll                                                                          |     0.097 |
-|   ps                                                                           |     1.305 |
+|   ps                                                                           |     1.306 |
 |     axi_slave_gp0                                                              |     0.002 |
-|     system_i                                                                   |     1.303 |
+|     system_i                                                                   |     1.304 |
 |       axi_protocol_converter_0                                                 |     0.011 |
 |         inst                                                                   |     0.011 |
 |           gen_axilite.gen_b2s_conv.axilite_b2s                                 |     0.011 |
