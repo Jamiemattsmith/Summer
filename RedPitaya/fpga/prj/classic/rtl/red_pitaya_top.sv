@@ -358,7 +358,7 @@ always @(posedge dac_clk_1x)begin
 if(adc_rstn==1'b0) begin
 i<=0;
 m_avg<='0;
-m_avg_sum='0;
+m_avg_sum<='0;
 end
 
  if(i>=63)begin
@@ -368,9 +368,9 @@ end
   end
   m_avg_sum<=m_avg_sum+	{dac_a[14-1], ~dac_a[14-2:0]}-m_avg[i];
   m_avg[i]<={dac_a[14-1], ~dac_a[14-2:0]};
-  dac_dat_b <= {dac_b[14-1], ~dac_b[14-2:0]};
+  dac_dat_a <= {dac_a[14-1], ~dac_a[14-2:0]};
   //dac_dat_b <= {dac_b[14-1], ~dac_b[14-2:0]};
-  dac_dat_a <= m_avg_sum[19:6];
+  dac_dat_b <= m_avg_sum[19:6];
 end
 
 // DDR outputs

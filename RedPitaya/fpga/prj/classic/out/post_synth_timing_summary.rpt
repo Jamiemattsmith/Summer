@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Fri Jul 27 16:07:14 2018
+| Date         : Mon Jul 30 09:17:20 2018
 | Host         : jzsmith-VirtualBox running 64-bit Ubuntu 18.04 LTS
 | Command      : report_timing_summary -file out/post_synth_timing_summary.rpt
 | Design       : red_pitaya_top
@@ -126,7 +126,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-     -2.597     -284.021                    475                16019       -0.089       -7.228                    107                16019        1.000        0.000                       0                  5857  
+     -2.597     -282.173                    470                16005       -0.089       -7.228                    107                16005        1.000        0.000                       0                  5857  
 
 
 Timing constraints are not met.
@@ -163,7 +163,7 @@ Clock                 WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total End
 -----                 -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
 adc_clk                                                                                                                                                             2.000        0.000                       0                     1  
   clk_fb                                                                                                                                                            6.751        0.000                       0                     2  
-  pll_adc_clk          -2.597     -282.606                    466                10766        0.074        0.000                      0                10766        3.020        0.000                       0                  3676  
+  pll_adc_clk          -2.597     -280.758                    461                10766        0.074        0.000                      0                10766        3.020        0.000                       0                  3676  
   pll_dac_clk_1x        1.626        0.000                      0                 2837       -0.089       -1.334                     15                 2837        3.500        0.000                       0                   998  
   pll_dac_clk_2p                                                                                                                                                    1.845        0.000                       0                     3  
   pll_dac_clk_2x                                                                                                                                                    1.845        0.000                       0                     3  
@@ -183,7 +183,7 @@ clk_fpga_3             -0.171       -1.415                      9               
 From Clock      To Clock            WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
 ----------      --------            -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
 adc_clk         pll_adc_clk           4.849        0.000                      0                   28        1.266        0.000                      0                   28  
-pll_adc_clk     pll_dac_clk_1x        2.416        0.000                      0                 2736        0.032        0.000                      0                 2736  
+pll_adc_clk     pll_dac_clk_1x        2.442        0.000                      0                 2722        0.268        0.000                      0                 2722  
 pll_adc_clk     pll_pwm_clk           2.077        0.000                      0                   96       -0.071       -5.894                     92                   96  
 
 
@@ -254,7 +254,7 @@ Max Period  n/a     PLLE2_ADV/CLKFBIN   n/a            52.633        8.000      
 From Clock:  pll_adc_clk
   To Clock:  pll_adc_clk
 
-Setup :          466  Failing Endpoints,  Worst Slack       -2.597ns,  Total Violation     -282.606ns
+Setup :          461  Failing Endpoints,  Worst Slack       -2.597ns,  Total Violation     -280.758ns
 Hold  :            0  Failing Endpoints,  Worst Slack        0.074ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        3.020ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
@@ -1158,14 +1158,14 @@ Slack (MET) :             1.266ns  (arrival time - required time)
 From Clock:  pll_adc_clk
   To Clock:  pll_dac_clk_1x
 
-Setup :            0  Failing Endpoints,  Worst Slack        2.416ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.032ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        2.442ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.268ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             2.416ns  (required time - arrival time)
+Slack (MET) :             2.442ns  (required time - arrival time)
   Source:                 i_asg/ch[0]/dac_o_reg[1]/C
                             (rising edge-triggered cell FDRE clocked by pll_adc_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            m_avg_sum_reg[17]/D
@@ -1173,7 +1173,7 @@ Slack (MET) :             2.416ns  (required time - arrival time)
   Path Group:             pll_dac_clk_1x
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (pll_dac_clk_1x rise@8.000ns - pll_adc_clk rise@0.000ns)
-  Data Path Delay:        5.262ns  (logic 3.380ns (64.234%)  route 1.882ns (35.766%))
+  Data Path Delay:        5.236ns  (logic 3.608ns (68.908%)  route 1.628ns (31.092%))
   Logic Levels:           11  (CARRY4=9 LUT2=1 LUT4=1)
   Clock Path Skew:        -0.195ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    2.969ns = ( 10.969 - 8.000 ) 
@@ -1214,24 +1214,24 @@ Slack (MET) :             2.416ns  (required time - arrival time)
                          net (fo=1, unplaced)         0.000     5.367    i_scope_i_30_n_0
                          CARRY4 (Prop_carry4_CI_O[1])
                                                       0.348     5.715 f  i_scope_i_29/O[1]
-                         net (fo=872, unplaced)       0.751     6.466    i_scope_i_29_n_6
-                         LUT4 (Prop_lut4_I1_O)        0.306     6.772 r  m_avg_sum[3]_i_4/O
-                         net (fo=2, unplaced)         0.650     7.422    m_avg_sum[3]_i_4_n_0
+                         net (fo=885, unplaced)       0.751     6.466    i_scope_i_29_n_6
+                         LUT4 (Prop_lut4_I1_O)        0.332     6.798 r  m_avg_sum[3]_i_4/O
+                         net (fo=2, unplaced)         0.396     7.194    m_avg_sum[3]_i_4_n_0
                          CARRY4 (Prop_carry4_DI[1]_CO[3])
-                                                      0.507     7.929 r  m_avg_sum_reg[3]_i_1/CO[3]
-                         net (fo=1, unplaced)         0.000     7.929    m_avg_sum_reg[3]_i_1_n_0
+                                                      0.709     7.903 r  m_avg_sum_reg[3]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     7.903    m_avg_sum_reg[3]_i_1_n_0
                          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.043 r  m_avg_sum_reg[7]_i_1/CO[3]
-                         net (fo=1, unplaced)         0.000     8.043    m_avg_sum_reg[7]_i_1_n_0
+                                                      0.114     8.017 r  m_avg_sum_reg[7]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.017    m_avg_sum_reg[7]_i_1_n_0
                          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.157 r  m_avg_sum_reg[11]_i_1/CO[3]
-                         net (fo=1, unplaced)         0.000     8.157    m_avg_sum_reg[11]_i_1_n_0
+                                                      0.114     8.131 r  m_avg_sum_reg[11]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.131    m_avg_sum_reg[11]_i_1_n_0
                          CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114     8.271 r  m_avg_sum_reg[15]_i_1/CO[3]
-                         net (fo=1, unplaced)         0.000     8.271    m_avg_sum_reg[15]_i_1_n_0
+                                                      0.114     8.245 r  m_avg_sum_reg[15]_i_1/CO[3]
+                         net (fo=1, unplaced)         0.000     8.245    m_avg_sum_reg[15]_i_1_n_0
                          CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.348     8.619 r  m_avg_sum_reg[19]_i_1/O[1]
-                         net (fo=1, unplaced)         0.000     8.619    m_avg_sum0[17]
+                                                      0.348     8.593 r  m_avg_sum_reg[19]_i_1/O[1]
+                         net (fo=1, unplaced)         0.000     8.593    m_avg_sum_reg[19]_i_1_n_6
                          FDRE                                         r  m_avg_sum_reg[17]/D
   -------------------------------------------------------------------    -------------------
 
@@ -1252,9 +1252,9 @@ Slack (MET) :             2.416ns  (required time - arrival time)
                          FDRE (Setup_fdre_C_D)        0.062    11.035    m_avg_sum_reg[17]
   -------------------------------------------------------------------
                          required time                         11.035    
-                         arrival time                          -8.619    
+                         arrival time                          -8.593    
   -------------------------------------------------------------------
-                         slack                                  2.416    
+                         slack                                  2.442    
 
 
 
@@ -1262,16 +1262,16 @@ Slack (MET) :             2.416ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.032ns  (arrival time - required time)
-  Source:                 adc_rstn_reg/C
+Slack (MET) :             0.268ns  (arrival time - required time)
+  Source:                 i_pid/out_1_sat_reg[12]/C
                             (rising edge-triggered cell FDRE clocked by pll_adc_clk  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            m_avg_sum_reg[15]/D
+  Destination:            dac_dat_a_reg[12]/D
                             (rising edge-triggered cell FDRE clocked by pll_dac_clk_1x  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             pll_dac_clk_1x
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (pll_dac_clk_1x rise@0.000ns - pll_adc_clk rise@0.000ns)
-  Data Path Delay:        0.492ns  (logic 0.302ns (61.369%)  route 0.190ns (38.631%))
-  Logic Levels:           2  (CARRY4=1 LUT3=1)
+  Data Path Delay:        0.714ns  (logic 0.414ns (57.973%)  route 0.300ns (42.027%))
+  Logic Levels:           3  (CARRY4=1 LUT2=1 LUT3=1)
   Clock Path Skew:        0.166ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    1.485ns
     Source Clock Delay      (SCD):    1.139ns
@@ -1293,17 +1293,19 @@ Slack (MET) :             0.032ns  (arrival time - required time)
                                                       0.051     0.566 r  pll/pll/CLKOUT0
                          net (fo=1, unplaced)         0.337     0.904    pll_adc_clk
                          BUFG (Prop_bufg_I_O)         0.026     0.930 r  bufg_adc_clk/O
-                         net (fo=3681, unplaced)      0.210     1.139    adc_clk
-                         FDRE                                         r  adc_rstn_reg/C
+                         net (fo=3681, unplaced)      0.210     1.139    i_pid/clk_i
+                         FDRE                                         r  i_pid/out_1_sat_reg[12]/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     1.280 f  adc_rstn_reg/Q
-                         net (fo=638, unplaced)       0.190     1.471    rstn
-                         LUT3 (Prop_lut3_I2_O)        0.098     1.569 r  m_avg_sum[15]_i_6/O
-                         net (fo=1, unplaced)         0.000     1.569    m_avg_sum[15]_i_6_n_0
-                         CARRY4 (Prop_carry4_S[3]_O[3])
-                                                      0.063     1.632 r  m_avg_sum_reg[15]_i_1/O[3]
-                         net (fo=1, unplaced)         0.000     1.632    m_avg_sum0[15]
-                         FDRE                                         r  m_avg_sum_reg[15]/D
+                         FDRE (Prop_fdre_C_Q)         0.141     1.280 r  i_pid/out_1_sat_reg[12]/Q
+                         net (fo=1, unplaced)         0.131     1.411    pid_dat[0][12]
+                         LUT2 (Prop_lut2_I1_O)        0.098     1.509 r  i_scope_i_39/O
+                         net (fo=1, unplaced)         0.000     1.509    i_scope_i_39_n_0
+                         CARRY4 (Prop_carry4_S[0]_O[0])
+                                                      0.070     1.579 f  i_scope_i_29/O[0]
+                         net (fo=68, unplaced)        0.169     1.749    i_scope_i_29_n_7
+                         LUT3 (Prop_lut3_I2_O)        0.105     1.854 r  dac_dat_a[12]_i_1/O
+                         net (fo=1, unplaced)         0.000     1.854    p_0_in[12]
+                         FDRE                                         r  dac_dat_a_reg[12]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock pll_dac_clk_1x rise edge)
@@ -1317,15 +1319,15 @@ Slack (MET) :             0.032ns  (arrival time - required time)
                          net (fo=1, unplaced)         0.355     1.101    pll_dac_clk_1x
                          BUFG (Prop_bufg_I_O)         0.029     1.130 r  bufg_dac_clk_1x/O
                          net (fo=996, unplaced)       0.355     1.485    dac_clk_1x
-                         FDRE                                         r  m_avg_sum_reg[15]/C
+                         FDRE                                         r  dac_dat_a_reg[12]/C
                          clock pessimism             -0.179     1.305    
                          clock uncertainty            0.189     1.494    
-                         FDRE (Hold_fdre_C_D)         0.105     1.599    m_avg_sum_reg[15]
+                         FDRE (Hold_fdre_C_D)         0.091     1.585    dac_dat_a_reg[12]
   -------------------------------------------------------------------
-                         required time                         -1.599    
-                         arrival time                           1.632    
+                         required time                         -1.585    
+                         arrival time                           1.854    
   -------------------------------------------------------------------
-                         slack                                  0.032    
+                         slack                                  0.268    
 
 
 
