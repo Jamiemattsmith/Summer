@@ -370,7 +370,7 @@ end
   m_avg[i]<=asg_dat[0];
   dac_dat_b <= {dac_b[14-1], ~dac_b[14-2:0]};
   //dac_dat_b <= {dac_b[14-1], ~dac_b[14-2:0]};
-  dac_dat_a <= m_avg_sum[19:6];
+  dac_dat_a <= {m_avg_sum[19], ~m_avg_sum[18:6]};
 end
 
 // DDR outputs
