@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date             : Mon Jul 30 15:29:12 2018
+| Date             : Mon Jul 30 15:42:56 2018
 | Host             : jzsmith-VirtualBox running 64-bit Ubuntu 18.04 LTS
 | Command          : report_power -file out/post_synth_power.rpt
 | Design           : red_pitaya_top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 2.127        |
+| Total On-Chip Power (W)  | 2.124        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.989        |
+| Dynamic (W)              | 1.986        |
 | Device Static (W)        | 0.138        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 60.5         |
@@ -61,15 +61,15 @@ Table of Contents
 |   LUT as Shift Register |    <0.001 |       67 |      6000 |            1.12 |
 |   Others                |     0.000 |      270 |       --- |             --- |
 |   BUFG                  |     0.000 |        1 |        32 |            3.13 |
-| Signals                 |     0.055 |    12491 |       --- |             --- |
+| Signals                 |     0.054 |    12491 |       --- |             --- |
 | Block RAM               |     0.108 |       28 |        60 |           46.67 |
 | PLL                     |     0.097 |        1 |         2 |           50.00 |
 | DSPs                    |     0.028 |       22 |        80 |           27.50 |
-| I/O                     |     0.322 |       91 |       100 |           91.00 |
+| I/O                     |     0.319 |       91 |       100 |           91.00 |
 | XADC                    |     0.004 |        1 |       --- |             --- |
 | PS7                     |     1.281 |        1 |       --- |             --- |
 | Static Power            |     0.138 |          |           |                 |
-| Total                   |     2.126 |          |           |                 |
+| Total                   |     2.124 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -79,9 +79,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.295 |       0.285 |      0.010 |
+| Vccint    |       1.000 |     0.294 |       0.285 |      0.010 |
 | Vccaux    |       1.800 |     0.066 |       0.057 |      0.009 |
-| Vcco33    |       3.300 |     0.094 |       0.093 |      0.001 |
+| Vcco33    |       3.300 |     0.093 |       0.092 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.002 |       0.001 |      0.001 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -166,7 +166,7 @@ Table of Contents
 +--------------------------------------------------------------------------------+-----------+
 | Name                                                                           | Power (W) |
 +--------------------------------------------------------------------------------+-----------+
-| red_pitaya_top                                                                 |     1.988 |
+| red_pitaya_top                                                                 |     1.985 |
 |   i_ams                                                                        |     0.001 |
 |   i_asg                                                                        |     0.090 |
 |     ch[0]                                                                      |     0.043 |

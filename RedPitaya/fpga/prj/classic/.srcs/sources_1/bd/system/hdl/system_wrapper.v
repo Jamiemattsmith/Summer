@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-//Date        : Mon Jul 30 15:26:27 2018
+//Date        : Mon Jul 30 15:40:12 2018
 //Host        : jzsmith-VirtualBox running 64-bit Ubuntu 18.04 LTS
 //Command     : generate_target system_wrapper.bd
 //Design      : system_wrapper
