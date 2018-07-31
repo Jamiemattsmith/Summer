@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date             : Tue Jul 31 10:17:41 2018
+| Date             : Tue Jul 31 10:32:52 2018
 | Host             : jzsmith-VirtualBox running 64-bit Ubuntu 18.04 LTS
 | Command          : report_power -file out/post_route_power.rpt
 | Design           : red_pitaya_top
@@ -52,15 +52,15 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.039 |       14 |       --- |             --- |
-| Slice Logic             |     0.038 |    13731 |       --- |             --- |
-|   LUT as Logic          |     0.034 |     6106 |     17600 |           34.69 |
+| Clocks                  |     0.038 |       14 |       --- |             --- |
+| Slice Logic             |     0.037 |    13715 |       --- |             --- |
+|   LUT as Logic          |     0.033 |     6109 |     17600 |           34.71 |
 |   CARRY4                |     0.003 |      510 |      4400 |           11.59 |
-|   Register              |     0.001 |     5549 |     35200 |           15.76 |
+|   Register              |     0.001 |     5534 |     35200 |           15.72 |
 |   F7/F8 Muxes           |    <0.001 |      233 |     17600 |            1.32 |
 |   LUT as Shift Register |    <0.001 |       45 |      6000 |            0.75 |
 |   Others                |     0.000 |      265 |       --- |             --- |
-| Signals                 |     0.053 |    10397 |       --- |             --- |
+| Signals                 |     0.054 |    10379 |       --- |             --- |
 | Block RAM               |     0.091 |       28 |        60 |           46.67 |
 | PLL                     |     0.097 |        1 |         2 |           50.00 |
 | DSPs                    |     0.029 |       22 |        80 |           27.50 |
@@ -78,7 +78,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.262 |       0.252 |      0.009 |
+| Vccint    |       1.000 |     0.261 |       0.252 |      0.009 |
 | Vccaux    |       1.800 |     0.066 |       0.057 |      0.009 |
 | Vcco33    |       3.300 |     0.093 |       0.092 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -169,11 +169,11 @@ Table of Contents
 |   i_id                                                                         |    <0.001 |
 |   i_pid                                                                        |     0.034 |
 |     i_pid11                                                                    |     0.008 |
-|     i_pid12                                                                    |     0.008 |
+|     i_pid12                                                                    |     0.007 |
 |     i_pid21                                                                    |     0.008 |
 |     i_pid22                                                                    |     0.008 |
 |   i_scope                                                                      |     0.074 |
-|     i_dfilt1_cha                                                               |     0.011 |
+|     i_dfilt1_cha                                                               |     0.010 |
 |     i_dfilt1_chb                                                               |     0.010 |
 |     i_wr0                                                                      |     0.002 |
 |     i_wr1                                                                      |     0.002 |
@@ -208,7 +208,7 @@ Table of Contents
 |       axi_protocol_converter_0                                                 |     0.011 |
 |         inst                                                                   |     0.011 |
 |           gen_axilite.gen_b2s_conv.axilite_b2s                                 |     0.011 |
-|             RD.ar_channel_0                                                    |     0.002 |
+|             RD.ar_channel_0                                                    |     0.003 |
 |               ar_cmd_fsm_0                                                     |    <0.001 |
 |               cmd_translator_0                                                 |     0.002 |
 |                 incr_cmd_0                                                     |    <0.001 |
