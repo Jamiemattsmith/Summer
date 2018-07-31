@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date             : Tue Jul 31 09:44:17 2018
+| Date             : Tue Jul 31 09:56:47 2018
 | Host             : jzsmith-VirtualBox running 64-bit Ubuntu 18.04 LTS
 | Command          : report_power -file out/post_route_power.rpt
 | Design           : red_pitaya_top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 2.088        |
+| Total On-Chip Power (W)  | 2.090        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.951        |
+| Dynamic (W)              | 1.952        |
 | Device Static (W)        | 0.137        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 60.9         |
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.039 |       14 |       --- |             --- |
-| Slice Logic             |     0.037 |    13744 |       --- |             --- |
-|   LUT as Logic          |     0.033 |     6116 |     17600 |           34.75 |
+| Slice Logic             |     0.038 |    13731 |       --- |             --- |
+|   LUT as Logic          |     0.034 |     6123 |     17600 |           34.79 |
 |   CARRY4                |     0.003 |      510 |      4400 |           11.59 |
-|   Register              |     0.001 |     5561 |     35200 |           15.80 |
+|   Register              |     0.001 |     5536 |     35200 |           15.73 |
 |   F7/F8 Muxes           |    <0.001 |      233 |     17600 |            1.32 |
 |   LUT as Shift Register |    <0.001 |       45 |      6000 |            0.75 |
 |   Others                |     0.000 |      265 |       --- |             --- |
-| Signals                 |     0.051 |    10393 |       --- |             --- |
+| Signals                 |     0.053 |    10383 |       --- |             --- |
 | Block RAM               |     0.091 |       28 |        60 |           46.67 |
 | PLL                     |     0.097 |        1 |         2 |           50.00 |
 | DSPs                    |     0.029 |       22 |        80 |           27.50 |
@@ -68,7 +68,7 @@ Table of Contents
 | XADC                    |     0.004 |        1 |       --- |             --- |
 | PS7                     |     1.281 |        1 |       --- |             --- |
 | Static Power            |     0.137 |          |           |                 |
-| Total                   |     2.088 |          |           |                 |
+| Total                   |     2.090 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,7 +78,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.260 |       0.251 |      0.009 |
+| Vccint    |       1.000 |     0.262 |       0.252 |      0.009 |
 | Vccaux    |       1.800 |     0.066 |       0.057 |      0.009 |
 | Vcco33    |       3.300 |     0.093 |       0.092 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -161,15 +161,15 @@ Table of Contents
 +--------------------------------------------------------------------------------+-----------+
 | Name                                                                           | Power (W) |
 +--------------------------------------------------------------------------------+-----------+
-| red_pitaya_top                                                                 |     1.950 |
+| red_pitaya_top                                                                 |     1.952 |
 |   i_ams                                                                        |     0.001 |
-|   i_asg                                                                        |     0.075 |
+|   i_asg                                                                        |     0.076 |
 |     ch[0]                                                                      |     0.036 |
 |     ch[1]                                                                      |     0.036 |
 |   i_id                                                                         |    <0.001 |
 |   i_pid                                                                        |     0.033 |
-|     i_pid11                                                                    |     0.007 |
-|     i_pid12                                                                    |     0.008 |
+|     i_pid11                                                                    |     0.008 |
+|     i_pid12                                                                    |     0.007 |
 |     i_pid21                                                                    |     0.008 |
 |     i_pid22                                                                    |     0.008 |
 |   i_scope                                                                      |     0.074 |
@@ -217,7 +217,7 @@ Table of Contents
 |               rd_data_fifo_0                                                   |    <0.001 |
 |               transaction_fifo_0                                               |    <0.001 |
 |             SI_REG                                                             |     0.004 |
-|               ar.ar_pipe                                                       |    <0.001 |
+|               ar.ar_pipe                                                       |     0.001 |
 |               aw.aw_pipe                                                       |     0.001 |
 |               b.b_pipe                                                         |    <0.001 |
 |               r.r_pipe                                                         |    <0.001 |
@@ -238,8 +238,8 @@ Table of Contents
 |             SEQ_COUNTER                                                        |    <0.001 |
 |       processing_system7                                                       |     1.284 |
 |         inst                                                                   |     1.284 |
-|       xadc                                                                     |     0.008 |
-|         inst                                                                   |     0.008 |
+|       xadc                                                                     |     0.009 |
+|         inst                                                                   |     0.009 |
 |           AXI_LITE_IPIF_I                                                      |     0.002 |
 |             I_SLAVE_ATTACHMENT                                                 |     0.002 |
 |               I_DECODER                                                        |    <0.001 |
