@@ -366,11 +366,11 @@ end
   end else begin
   i<=i+1;
   end
-  m_avg_sum<=m_avg_sum+	asg_dat[0]-m_avg[i];
-  m_avg[i]<=asg_dat[0];
+  m_avg_sum<=m_avg_sum+	{dac_b[14-1], ~dac_b[14-2:0]}-m_avg[i];
+  m_avg[i]<={dac_b[14-1], ~dac_b[14-2:0]};
   dac_dat_b <= {dac_b[14-1], ~dac_b[14-2:0]};
   //dac_dat_b <= {dac_b[14-1], ~dac_b[14-2:0]};
-  dac_dat_a <= {m_avg_sum[19], ~m_avg_sum[18:6]};
+  dac_dat_a <= {m_avg_sum[19], m_avg_sum[18:6]};
 end
 
 // DDR outputs

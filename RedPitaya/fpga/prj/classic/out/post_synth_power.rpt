@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date             : Mon Jul 30 16:26:22 2018
+| Date             : Tue Jul 31 09:03:56 2018
 | Host             : jzsmith-VirtualBox running 64-bit Ubuntu 18.04 LTS
 | Command          : report_power -file out/post_synth_power.rpt
 | Design           : red_pitaya_top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 2.121        |
+| Total On-Chip Power (W)  | 2.124        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.983        |
+| Dynamic (W)              | 1.986        |
 | Device Static (W)        | 0.138        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 60.5         |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.053 |       15 |       --- |             --- |
-| Slice Logic             |     0.042 |    13823 |       --- |             --- |
-|   LUT as Logic          |     0.036 |     6023 |     17600 |           34.22 |
+| Slice Logic             |     0.040 |    13867 |       --- |             --- |
+|   LUT as Logic          |     0.035 |     6060 |     17600 |           34.43 |
 |   CARRY4                |     0.004 |      510 |      4400 |           11.59 |
-|   Register              |     0.002 |     5678 |     35200 |           16.13 |
-|   F7/F8 Muxes           |    <0.001 |      179 |     17600 |            1.02 |
+|   Register              |     0.002 |     5676 |     35200 |           16.13 |
+|   F7/F8 Muxes           |    <0.001 |      233 |     17600 |            1.32 |
 |   LUT as Shift Register |    <0.001 |       67 |      6000 |            1.12 |
 |   Others                |     0.000 |      270 |       --- |             --- |
 |   BUFG                  |     0.000 |        1 |        32 |            3.13 |
-| Signals                 |     0.051 |    12558 |       --- |             --- |
+| Signals                 |     0.054 |    12491 |       --- |             --- |
 | Block RAM               |     0.108 |       28 |        60 |           46.67 |
 | PLL                     |     0.097 |        1 |         2 |           50.00 |
 | DSPs                    |     0.028 |       22 |        80 |           27.50 |
@@ -69,7 +69,7 @@ Table of Contents
 | XADC                    |     0.004 |        1 |       --- |             --- |
 | PS7                     |     1.281 |        1 |       --- |             --- |
 | Static Power            |     0.138 |          |           |                 |
-| Total                   |     2.121 |          |           |                 |
+| Total                   |     2.123 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -79,7 +79,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.292 |       0.282 |      0.010 |
+| Vccint    |       1.000 |     0.294 |       0.284 |      0.010 |
 | Vccaux    |       1.800 |     0.066 |       0.057 |      0.009 |
 | Vcco33    |       3.300 |     0.093 |       0.092 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -166,10 +166,10 @@ Table of Contents
 +--------------------------------------------------------------------------------+-----------+
 | Name                                                                           | Power (W) |
 +--------------------------------------------------------------------------------+-----------+
-| red_pitaya_top                                                                 |     1.983 |
+| red_pitaya_top                                                                 |     1.985 |
 |   i_ams                                                                        |     0.001 |
-|   i_asg                                                                        |     0.092 |
-|     ch[0]                                                                      |     0.045 |
+|   i_asg                                                                        |     0.090 |
+|     ch[0]                                                                      |     0.043 |
 |     ch[1]                                                                      |     0.043 |
 |   i_id                                                                         |    <0.001 |
 |   i_pid                                                                        |     0.034 |

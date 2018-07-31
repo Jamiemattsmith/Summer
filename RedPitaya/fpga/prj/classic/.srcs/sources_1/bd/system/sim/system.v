@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-//Date        : Mon Jul 30 16:23:34 2018
+//Date        : Tue Jul 31 09:01:17 2018
 //Host        : jzsmith-VirtualBox running 64-bit Ubuntu 18.04 LTS
 //Command     : generate_target system.bd
 //Design      : system
