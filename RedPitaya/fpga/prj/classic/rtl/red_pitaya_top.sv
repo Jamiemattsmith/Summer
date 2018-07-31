@@ -366,8 +366,8 @@ end
   end else begin
   i<=i+1;
   end
-  m_avg_sum<=m_avg_sum+	dac_a[14-1:0]-m_avg[i];
-  m_avg[i]<=dac_a[14-1:0];
+  m_avg_sum<=$signed(m_avg_sum)+$signed(dac_a[14-1:0])-$signed(m_avg[i]);
+  m_avg[i]<=$signed(dac_a[14-1:0]);
   dac_dat_b <= {dac_b[14-1], ~dac_b[14-2:0]};
   //dac_dat_b <= {dac_b[14-1], ~dac_b[14-2:0]};
   dac_dat_a <= {m_avg_sum[19],~m_avg_sum[18:6]};
