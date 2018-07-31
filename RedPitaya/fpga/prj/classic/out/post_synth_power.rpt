@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date             : Tue Jul 31 09:03:56 2018
+| Date             : Tue Jul 31 09:41:12 2018
 | Host             : jzsmith-VirtualBox running 64-bit Ubuntu 18.04 LTS
 | Command          : report_power -file out/post_synth_power.rpt
 | Design           : red_pitaya_top
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.053 |       15 |       --- |             --- |
-| Slice Logic             |     0.040 |    13867 |       --- |             --- |
-|   LUT as Logic          |     0.035 |     6060 |     17600 |           34.43 |
+| Slice Logic             |     0.041 |    13881 |       --- |             --- |
+|   LUT as Logic          |     0.035 |     6074 |     17600 |           34.51 |
 |   CARRY4                |     0.004 |      510 |      4400 |           11.59 |
 |   Register              |     0.002 |     5676 |     35200 |           16.13 |
 |   F7/F8 Muxes           |    <0.001 |      233 |     17600 |            1.32 |
 |   LUT as Shift Register |    <0.001 |       67 |      6000 |            1.12 |
 |   Others                |     0.000 |      270 |       --- |             --- |
 |   BUFG                  |     0.000 |        1 |        32 |            3.13 |
-| Signals                 |     0.054 |    12491 |       --- |             --- |
+| Signals                 |     0.054 |    12505 |       --- |             --- |
 | Block RAM               |     0.108 |       28 |        60 |           46.67 |
 | PLL                     |     0.097 |        1 |         2 |           50.00 |
 | DSPs                    |     0.028 |       22 |        80 |           27.50 |
@@ -79,7 +79,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.294 |       0.284 |      0.010 |
+| Vccint    |       1.000 |     0.294 |       0.285 |      0.010 |
 | Vccaux    |       1.800 |     0.066 |       0.057 |      0.009 |
 | Vcco33    |       3.300 |     0.093 |       0.092 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
