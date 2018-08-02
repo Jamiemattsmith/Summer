@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Thu Aug  2 10:06:16 2018
+| Date         : Thu Aug  2 10:18:14 2018
 | Host         : jzsmith-VirtualBox running 64-bit Ubuntu 18.04 LTS
 | Command      : report_drc -file out/post_imp_drc.rpt
 | Design       : red_pitaya_top
@@ -64,42 +64,42 @@ Related violations: <none>
 
 DPIP-1#6 Warning
 Input pipelining  
-DSP i_pid/i_pid12/int_sum input i_pid/i_pid12/int_sum/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP i_pid/i_pid12/int_sum input i_pid/i_pid12/int_sum/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#7 Warning
 Input pipelining  
-DSP i_pid/i_pid12/kd_mult input i_pid/i_pid12/kd_mult/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP i_pid/i_pid12/int_sum input i_pid/i_pid12/int_sum/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#8 Warning
 Input pipelining  
-DSP i_pid/i_pid12/kp_mult input i_pid/i_pid12/kp_mult/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP i_pid/i_pid12/kd_mult input i_pid/i_pid12/kd_mult/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#9 Warning
 Input pipelining  
-DSP i_pid/i_pid21/int_sum input i_pid/i_pid21/int_sum/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP i_pid/i_pid12/kd_mult input i_pid/i_pid12/kd_mult/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#10 Warning
 Input pipelining  
-DSP i_pid/i_pid21/int_sum input i_pid/i_pid21/int_sum/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP i_pid/i_pid12/kp_mult input i_pid/i_pid12/kp_mult/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#11 Warning
 Input pipelining  
-DSP i_pid/i_pid21/kd_mult input i_pid/i_pid21/kd_mult/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP i_pid/i_pid12/kp_mult input i_pid/i_pid12/kp_mult/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#12 Warning
 Input pipelining  
-DSP i_pid/i_pid21/kd_mult input i_pid/i_pid21/kd_mult/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP i_pid/i_pid21/int_sum input i_pid/i_pid21/int_sum/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#13 Warning
 Input pipelining  
-DSP i_pid/i_pid21/kp_mult input i_pid/i_pid21/kp_mult/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP i_pid/i_pid21/kd_mult input i_pid/i_pid21/kd_mult/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#14 Warning
@@ -354,22 +354,22 @@ Related violations: <none>
 
 IOSR-1#1 Warning
 IOB set reset sharing  
-IO exp_p_io[0] connects to flops which have these i_asg/ch[1]/clear, i_scope/clear, i_asg/ch[0]/clear set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
+IO exp_p_io[0] connects to flops which have these i_asg/ch[0]/clear, i_asg/ch[1]/clear, i_scope/clear set/reset signals.  For optimal IOB flop packing there should be only one set/reset signal coming into the IOB.
 Related violations: <none>
 
 REQP-20#1 Advisory
 enum_AREG_0_connects_CEA1_GND_connects_CEA2_GND  
-i_pid/i_pid21/int_sum: When DSP48E1 attribute AREG is set to 0, the CEA1 and CEA2 pins should be tied to GND to save power.
+i_pid/i_pid12/int_sum: When DSP48E1 attribute AREG is set to 0, the CEA1 and CEA2 pins should be tied to GND to save power.
 Related violations: <none>
 
 REQP-20#2 Advisory
 enum_AREG_0_connects_CEA1_GND_connects_CEA2_GND  
-i_pid/i_pid21/kd_mult: When DSP48E1 attribute AREG is set to 0, the CEA1 and CEA2 pins should be tied to GND to save power.
+i_pid/i_pid12/kd_mult: When DSP48E1 attribute AREG is set to 0, the CEA1 and CEA2 pins should be tied to GND to save power.
 Related violations: <none>
 
 REQP-20#3 Advisory
 enum_AREG_0_connects_CEA1_GND_connects_CEA2_GND  
-i_pid/i_pid21/kp_mult: When DSP48E1 attribute AREG is set to 0, the CEA1 and CEA2 pins should be tied to GND to save power.
+i_pid/i_pid12/kp_mult: When DSP48E1 attribute AREG is set to 0, the CEA1 and CEA2 pins should be tied to GND to save power.
 Related violations: <none>
 
 
