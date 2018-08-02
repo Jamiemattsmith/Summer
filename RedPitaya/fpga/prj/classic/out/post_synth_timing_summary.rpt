@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date         : Thu Aug  2 11:09:30 2018
+| Date         : Thu Aug  2 11:52:05 2018
 | Host         : jzsmith-VirtualBox running 64-bit Ubuntu 18.04 LTS
 | Command      : report_timing_summary -file out/post_synth_timing_summary.rpt
 | Design       : red_pitaya_top
@@ -1216,7 +1216,7 @@ Slack (MET) :             1.953ns  (required time - arrival time)
                                                       0.250     5.617 r  i_scope_i_33/CO[2]
                          net (fo=915, unplaced)       1.045     6.662    i_scope_i_33_n_1
                          LUT5 (Prop_lut5_I0_O)        0.310     6.972 r  i_scope_i_16/O
-                         net (fo=6, unplaced)         0.481     7.453    i_scope_i_16_n_0
+                         net (fo=6, unplaced)         0.481     7.453    adc_dat[1][12]
                          LUT3 (Prop_lut3_I1_O)        0.124     7.577 r  m_avg_sum_b[15]_i_3/O
                          net (fo=2, unplaced)         0.650     8.227    m_avg_sum_b[15]_i_3_n_0
                          CARRY4 (Prop_carry4_DI[1]_CO[3])
