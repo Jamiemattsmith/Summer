@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Thu Aug  2 13:39:27 2018'>
+<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Thu Aug  2 13:52:16 2018'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="2258646" description="" />
-  <keyValuePair key="date_generated" value="Thu Aug  2 13:39:27 2018" description="" />
+  <keyValuePair key="date_generated" value="Thu Aug  2 13:52:16 2018" description="" />
   <keyValuePair key="os_platform" value="LIN64" description="" />
   <keyValuePair key="product_version" value="Vivado v2018.2 (64-bit)" description="" />
-  <keyValuePair key="project_id" value="abc3ef9f2d854dd8be618d36c2d5bf3a" description="" />
+  <keyValuePair key="project_id" value="9b2e45b0385c4bf39364372c0296155a" description="" />
   <keyValuePair key="project_iteration" value="2" description="" />
-  <keyValuePair key="random_id" value="7a0d9132d776567899302086fa05f626" description="" />
-  <keyValuePair key="registration_id" value="7a0d9132d776567899302086fa05f626" description="" />
+  <keyValuePair key="random_id" value="2aaea19f3df25a72b6be89067b883622" description="" />
+  <keyValuePair key="registration_id" value="2aaea19f3df25a72b6be89067b883622" description="" />
   <keyValuePair key="route_design" value="TRUE" description="" />
   <keyValuePair key="target_device" value="xc7z010" description="" />
   <keyValuePair key="target_family" value="zynq" description="" />
@@ -598,7 +598,7 @@
    <keyValuePair key="output_load" value="5.000000" description="" />
    <keyValuePair key="output_toggle" value="12.500000" description="" />
    <keyValuePair key="package" value="clg400" description="" />
-   <keyValuePair key="pct_clock_constrained" value="3.010000" description="" />
+   <keyValuePair key="pct_clock_constrained" value="3.140000" description="" />
    <keyValuePair key="pct_inputs_defined" value="1" description="" />
    <keyValuePair key="platform" value="lin64" description="" />
    <keyValuePair key="pll" value="0.097184" description="" />
@@ -735,7 +735,7 @@
    <keyValuePair key="elapsed" value="00:01:29s" description="" />
    <keyValuePair key="hls_ip" value="0" description="" />
    <keyValuePair key="memory_gain" value="573.188MB" description="" />
-   <keyValuePair key="memory_peak" value="2137.824MB" description="" />
+   <keyValuePair key="memory_peak" value="2137.828MB" description="" />
   </section>
  </section>
  <section name="unisim_transformation" level="1" order="7" description="">
