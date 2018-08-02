@@ -370,8 +370,8 @@ end
   end
   m_avg_sum_a<=$signed(m_avg_sum_a)+$signed(dac_a[14-1:0])-$signed(m_avg_a[i]);
   m_avg_a[i]<=$signed(dac_a[14-1:0]);
-  m_avg_sum_b<=$signed(m_avg_sum_b)+$signed(adc_dat[1])-$signed(m_avg_b[i]);
-  m_avg_b[i]<=$signed(adc_dat[1]);
+  m_avg_sum_b<=$signed(m_avg_sum_b)+$signed(adc_dat_raw[1])-$signed(m_avg_b[i]);
+  m_avg_b[i]<=$signed(adc_dat_raw[1]);
   dac_dat_b <= {m_avg_sum_b[19],m_avg_sum_b[18:6]};
   //dac_dat_b <= {dac_b[14-1], ~dac_b[14-2:0]};
   dac_dat_a <= {m_avg_sum_a[19],~m_avg_sum_a[18:6]};
