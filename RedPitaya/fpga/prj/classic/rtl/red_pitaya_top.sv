@@ -347,7 +347,7 @@ assign adc_dat[1] = digital_loop ? dac_b : {adc_dat_raw[1][14-1], ~adc_dat_raw[1
 
 // Sumation of ASG and PID signal perform saturation before sending to DAC 
 assign dac_a_sum = asg_dat[0] + pid_dat[0];
-assign dac_b_sum = adc_dat[1]  + pid_dat[1];
+assign dac_b_sum = asg_dat[1] + pid_dat[1];
 
 // saturation
 assign dac_a = (^dac_a_sum[15-1:15-2]) ? {dac_a_sum[15-1], {13{~dac_a_sum[15-1]}}} : dac_a_sum[14-1:0];
@@ -370,8 +370,8 @@ end
   end
   m_avg_sum_a<=$signed(m_avg_sum_a)+$signed(dac_a[14-1:0])-$signed(m_avg_a[i]);
   m_avg_a[i]<=$signed(dac_a[14-1:0]);
-  m_avg_sum_b<=$signed(m_avg_sum_b)+$signed(dac_b[14-1:0])-$signed(m_avg_b[i]);
-  m_avg_b[i]<=$signed(dac_b[14-1:0]);
+  m_avg_sum_b<=$signed(m_avg_sum_b)+$signed(adc_dat[1])-$signed(m_avg_b[i]);
+  m_avg_b[i]<=$signed(adc_dat[1]);
   dac_dat_b <= {m_avg_sum_b[19],~m_avg_sum_b[18:6]};
   //dac_dat_b <= {dac_b[14-1], ~dac_b[14-2:0]};
   dac_dat_a <= {m_avg_sum_a[19],~m_avg_sum_a[18:6]};
