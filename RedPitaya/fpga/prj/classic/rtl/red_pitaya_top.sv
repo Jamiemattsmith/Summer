@@ -157,9 +157,9 @@ logic signed [15-1:0] dac_a_sum, dac_b_sum;
 
 // ASG
 SBG_T [2-1:0]            asg_dat;
-SBG_T [64-1:0]		m_avg;
+SBG_T [64-1:0]		m_avg_a, m_avg_b;
 int i;
-logic [20-1:0] m_avg_sum;
+logic [20-1:0] m_avg_sum_a, m_avg_sum_b;
 // PID
 SBA_T [2-1:0]            pid_dat;
 
@@ -357,8 +357,10 @@ assign dac_b = (^dac_b_sum[15-1:15-2]) ? {dac_b_sum[15-1], {13{~dac_b_sum[15-1]}
 always @(posedge dac_clk_1x)begin
 if(adc_rstn==1'b0) begin
 i<=0;
-m_avg<='0;
-m_avg_sum<='0;
+m_avg_a<='0;
+m_avg_sum_a<='0;
+m_avg_b<='0;
+m_avg_sum_b<='0;
 end
 
  if(i>=63)begin
@@ -366,11 +368,13 @@ end
   end else begin
   i<=i+1;
   end
-  m_avg_sum<=$signed(m_avg_sum)+$signed(dac_a[14-1:0])-$signed(m_avg[i]);
-  m_avg[i]<=$signed(dac_a[14-1:0]);
-  dac_dat_b <= {dac_b[14-1], ~dac_b[14-2:0]};
+  m_avg_sum_a<=$signed(m_avg_sum_a)+$signed(dac_a[14-1:0])-$signed(m_avg_a[i]);
+  m_avg_a[i]<=$signed(dac_a[14-1:0]);
+  m_avg_sum_b<=(m_avg_sum_b)+adc_dat_raw[1]-(m_avg_b[i]);
+  m_avg_b[i]<=adc_dat_raw[1];
+  dac_dat_b <= m_avg_sum_b[19:6];
   //dac_dat_b <= {dac_b[14-1], ~dac_b[14-2:0]};
-  dac_dat_a <= {m_avg_sum[19],~m_avg_sum[18:6]};
+  dac_dat_a <= {m_avg_sum_a[19],~m_avg_sum_a[18:6]};
 end
 
 // DDR outputs
