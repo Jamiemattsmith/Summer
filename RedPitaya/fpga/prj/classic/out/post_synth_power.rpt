@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
-| Date             : Thu Aug  2 14:35:15 2018
+| Date             : Tue Aug  7 12:14:42 2018
 | Host             : jzsmith-VirtualBox running 64-bit Ubuntu 18.04 LTS
 | Command          : report_power -file out/post_synth_power.rpt
 | Design           : red_pitaya_top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 2.043        |
+| Total On-Chip Power (W)  | 2.021        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.907        |
+| Dynamic (W)              | 1.885        |
 | Device Static (W)        | 0.136        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 61.4         |
-| Junction Temperature (C) | 48.6         |
+| Max Ambient (C)          | 61.7         |
+| Junction Temperature (C) | 48.3         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,24 +52,24 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.048 |       15 |       --- |             --- |
-| Slice Logic             |     0.032 |    11142 |       --- |             --- |
-|   LUT as Logic          |     0.027 |     4543 |     17600 |           25.81 |
-|   CARRY4                |     0.004 |      493 |      4400 |           11.20 |
-|   Register              |     0.002 |     4725 |     35200 |           13.42 |
-|   F7/F8 Muxes           |    <0.001 |       65 |     17600 |            0.37 |
+| Clocks                  |     0.057 |       15 |       --- |             --- |
+| Slice Logic             |     0.036 |    14076 |       --- |             --- |
+|   LUT as Logic          |     0.030 |     5220 |     17600 |           29.66 |
+|   CARRY4                |     0.004 |      515 |      4400 |           11.70 |
+|   Register              |     0.002 |     6593 |     35200 |           18.73 |
+|   F7/F8 Muxes           |    <0.001 |      401 |     17600 |            2.28 |
 |   LUT as Shift Register |    <0.001 |       67 |      6000 |            1.12 |
 |   Others                |     0.000 |      270 |       --- |             --- |
 |   BUFG                  |     0.000 |        1 |        32 |            3.13 |
-| Signals                 |     0.041 |    10154 |       --- |             --- |
+| Signals                 |     0.050 |    12339 |       --- |             --- |
 | Block RAM               |     0.108 |       28 |        60 |           46.67 |
 | PLL                     |     0.097 |        1 |         2 |           50.00 |
 | DSPs                    |     0.028 |       22 |        80 |           27.50 |
-| I/O                     |     0.267 |       91 |       100 |           91.00 |
+| I/O                     |     0.223 |       91 |       100 |           91.00 |
 | XADC                    |     0.004 |        1 |       --- |             --- |
 | PS7                     |     1.281 |        1 |       --- |             --- |
 | Static Power            |     0.136 |          |           |                 |
-| Total                   |     2.043 |          |           |                 |
+| Total                   |     2.020 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -79,9 +79,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.267 |       0.258 |      0.009 |
+| Vccint    |       1.000 |     0.288 |       0.279 |      0.009 |
 | Vccaux    |       1.800 |     0.065 |       0.056 |      0.009 |
-| Vcco33    |       3.300 |     0.077 |       0.076 |      0.001 |
+| Vcco33    |       3.300 |     0.065 |       0.064 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.002 |       0.001 |      0.001 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -92,7 +92,7 @@ Table of Contents
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.702 |       0.668 |      0.035 |
+| Vccpint   |       1.000 |     0.702 |       0.668 |      0.034 |
 | Vccpaux   |       1.800 |     0.038 |       0.027 |      0.010 |
 | Vccpll    |       1.800 |     0.017 |       0.014 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.356 |       0.354 |      0.002 |
@@ -166,7 +166,7 @@ Table of Contents
 +--------------------------------------------------------------------------------+-----------+
 | Name                                                                           | Power (W) |
 +--------------------------------------------------------------------------------+-----------+
-| red_pitaya_top                                                                 |     1.906 |
+| red_pitaya_top                                                                 |     1.884 |
 |   i_ams                                                                        |     0.001 |
 |   i_asg                                                                        |     0.090 |
 |     ch[0]                                                                      |     0.043 |
@@ -209,10 +209,10 @@ Table of Contents
 |   pll                                                                          |     0.097 |
 |   ps                                                                           |     1.315 |
 |     axi_slave_gp0                                                              |     0.002 |
-|     system_i                                                                   |     1.312 |
-|       axi_protocol_converter_0                                                 |     0.019 |
-|         inst                                                                   |     0.019 |
-|           gen_axilite.gen_b2s_conv.axilite_b2s                                 |     0.019 |
+|     system_i                                                                   |     1.311 |
+|       axi_protocol_converter_0                                                 |     0.018 |
+|         inst                                                                   |     0.018 |
+|           gen_axilite.gen_b2s_conv.axilite_b2s                                 |     0.018 |
 |             RD.ar_channel_0                                                    |     0.004 |
 |               ar_cmd_fsm_0                                                     |    <0.001 |
 |               cmd_translator_0                                                 |     0.003 |
@@ -243,8 +243,8 @@ Table of Contents
 |             SEQ_COUNTER                                                        |    <0.001 |
 |       processing_system7                                                       |     1.283 |
 |         inst                                                                   |     1.283 |
-|       xadc                                                                     |     0.010 |
-|         inst                                                                   |     0.010 |
+|       xadc                                                                     |     0.009 |
+|         inst                                                                   |     0.009 |
 |           AXI_LITE_IPIF_I                                                      |     0.003 |
 |             I_SLAVE_ATTACHMENT                                                 |     0.003 |
 |               I_DECODER                                                        |     0.001 |
