@@ -1,4 +1,4 @@
-# check if download cache directory is available meh
+# check if download cache directory is available
 DL ?= dl
 
 INSTALL_DIR ?= build
